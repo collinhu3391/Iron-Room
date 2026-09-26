@@ -202,6 +202,123 @@
   .ad-meta{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:8px;padding-top:14px;border-top:1px solid var(--line);}
   .ad-meta .ad-k{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px;}
   .ad-meta .ad-v{font-size:14px;color:var(--ink);font-weight:600;}
+  /* ===== Admitfolio cinematic demo ===== */
+  .af-demo{padding:clamp(40px,7vw,80px) clamp(20px,5vw,64px) clamp(28px,4vw,44px);overflow:hidden;}
+  .af-demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center;max-width:1180px;margin:0 auto;}
+  @media (max-width:900px){ .af-demo-grid{grid-template-columns:1fr;} }
+  .af-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8C2F28;}
+  .af-h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(40px,6.4vw,84px);line-height:0.98;letter-spacing:-0.01em;margin:18px 0 0;color:var(--ink);}
+  .af-h1 em{font-style:italic;color:#7A1F2B;display:block;}
+  .af-sub{margin:clamp(20px,3vw,28px) 0 0;font-size:clamp(15px,1.7vw,18px);line-height:1.55;color:var(--ink-soft);max-width:46ch;}
+  .af-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(22px,3vw,30px);}
+  .af-btn1{background:#7A1F2B;color:#fff;border:none;border-radius:40px;padding:15px 26px;font-family:'Work Sans',sans-serif;font-weight:700;font-size:15px;box-shadow:0 14px 28px -14px rgba(122,31,43,0.6);}
+  .af-btn2{background:#fff;color:#7A1F2B;border:none;border-radius:40px;padding:15px 24px;font-weight:700;font-size:15px;box-shadow:0 10px 24px -16px rgba(28,26,23,0.5);display:inline-flex;gap:8px;align-items:center;}
+  .af-stage{position:relative;height:clamp(360px,40vw,460px);}
+  .af-scene{position:absolute;inset:0;opacity:0;}
+  .af-card{background:#FBF9F4;border-radius:22px;box-shadow:0 30px 60px -30px rgba(28,26,23,0.35);height:100%;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;overflow:hidden;}
+  /* scene 1 textbox */
+  .tb-label{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.1em;color:#7A1F2B;}
+  .tb-line{margin-top:22px;position:relative;height:2.4em;font-family:'Fraunces',serif;font-weight:700;font-size:clamp(22px,2.6vw,30px);color:var(--ink);}
+  .tw{position:absolute;left:0;top:0;white-space:nowrap;overflow:hidden;width:0;border-right:2px solid #7A1F2B;opacity:0;}
+  .tw3{color:#7A1F2B;}
+  .tb-count{margin-top:auto;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);animation:wcCount 8.3s linear 0.6s both;}
+  @keyframes blink{0%,100%{border-color:#7A1F2B}50%{border-color:transparent}}
+  @keyframes tw1{0%{width:0;opacity:1}100%{width:38ch;opacity:1}}
+  @keyframes tw2{0%{width:0;opacity:1}100%{width:24ch;opacity:1}}
+  @keyframes tw3{0%{width:0;opacity:1}100%{width:50ch;opacity:1}}
+  @keyframes fadeOut{to{opacity:0}}
+  .tw1{animation:tw1 1.8s steps(38) 0.6s both, fadeOut .35s ease 3.0s forwards;}
+  .tw2{animation:tw2 1.4s steps(24) 3.6s both, fadeOut .3s ease 5.6s forwards;}
+  .tw3{animation:tw3 2.3s steps(50) 6.1s both;}
+  .af-s1{animation:sceneHold1 9.2s linear 0s forwards;}
+  @keyframes sceneHold1{0%{opacity:1}93%{opacity:1}100%{opacity:0}}
+  .af-s2{animation:sceneFade 4.0s linear 9.0s forwards;}
+  .af-s3{animation:sceneFade 2.4s linear 12.8s forwards;}
+  @keyframes sceneFade{0%{opacity:0}14%{opacity:1}86%{opacity:1}100%{opacity:0}}
+  .af-s4{animation:sceneIn 1.0s ease 15.2s forwards;}
+  @keyframes sceneIn{0%{opacity:0}100%{opacity:1}}
+  /* scene 2 card stack */
+  .af-peek{position:absolute;inset:0;overflow:hidden;border-radius:22px;}
+  .af-peek-track{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;gap:14px;animation:peekScroll 3.2s ease 9.2s both;}
+  @keyframes peekScroll{0%{transform:translateY(30px)}100%{transform:translateY(-150px)}}
+  .mini{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 12px 28px -22px rgba(28,26,23,0.4);}
+  .mini .mschool{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;}
+  .mini .mmajor{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#8C2F28;margin:8px 0 4px;}
+  .mini .mtitle{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--ink);}
+  .mini.target{animation:targetPulse 1.1s ease 11.4s both;}
+  @keyframes targetPulse{0%{box-shadow:0 12px 28px -22px rgba(28,26,23,0.4)}40%{box-shadow:0 0 0 3px #7A1F2B, 0 18px 30px -18px rgba(122,31,43,0.5);transform:translateY(-2px)}100%{box-shadow:0 0 0 3px #7A1F2B,0 18px 30px -18px rgba(122,31,43,0.5)}}
+  .af-cursor{position:absolute;width:26px;height:26px;left:52%;top:30%;opacity:0;z-index:5;animation:curMove 2.4s ease 10.2s both;}
+  @keyframes curMove{0%{opacity:0;left:70%;top:12%}30%{opacity:1}75%{opacity:1;left:46%;top:44%}82%{transform:scale(.8)}100%{opacity:1;left:46%;top:44%;transform:scale(1)}}
+  .af-ripple{position:absolute;left:46%;top:46%;width:12px;height:12px;border-radius:50%;background:rgba(122,31,43,0.35);opacity:0;animation:ripple .7s ease 12.1s both;}
+  @keyframes ripple{0%{opacity:.6;transform:scale(.3)}100%{opacity:0;transform:scale(6)}}
+  /* scene 3 lock */
+  .af-lockwrap{display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:16px;}
+  .af-lock{width:96px;height:96px;}
+  .af-lock .shackle{transform-origin:60px 48px;animation:unlock 1.0s cubic-bezier(.6,-0.4,.3,1.4) 13.4s both;}
+  @keyframes unlock{0%{transform:rotate(0) translateX(0)}55%{transform:rotate(0) translateY(-6px)}100%{transform:rotate(38deg) translate(-6px,-4px)}}
+  .af-lock .body{animation:lockPop .5s ease 13.2s both;}
+  @keyframes lockPop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+  .af-unlocktext{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;color:#7A1F2B;opacity:0;animation:sceneIn .5s ease 14.0s both;}
+  /* scene 4 essay */
+  .af-essay{height:100%;overflow:hidden;display:flex;flex-direction:column;}
+  .af-essay .etag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#7A1F2B;opacity:0;animation:eUp .6s ease 15.4s both;}
+  .af-essay .etitle{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(19px,2.2vw,26px);line-height:1.15;color:var(--ink);margin:12px 0 14px;opacity:0;animation:eUp .6s ease 15.7s both;}
+  .af-essay .epar{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 10px;opacity:0;animation:eUp .6s ease 16.1s both;}
+  .af-essay .epar2{animation-delay:16.4s;}
+  @keyframes eUp{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
+  .af-anno{position:absolute;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.35;color:#fff;background:#7A1F2B;padding:8px 12px;border-radius:10px;box-shadow:0 12px 24px -12px rgba(122,31,43,0.6);opacity:0;max-width:200px;}
+  .af-anno b{color:#F3D9C6;}
+  .af-anno.a1{left:-6%;top:34%;animation:annoIn .5s ease 16.8s both;}
+  .af-anno.a2{right:-4%;top:54%;background:#8C2F28;animation:annoIn .5s ease 17.3s both;}
+  .af-anno.a3{left:2%;bottom:8%;background:#9a4a44;animation:annoIn .5s ease 17.8s both;}
+  @keyframes annoIn{0%{opacity:0;transform:translateY(8px) scale(.9)}100%{opacity:1;transform:translateY(0) scale(1)}}
+  @media (prefers-reduced-motion: reduce){ .af-scene,.tw,.mini,.af-cursor,.af-ripple,.af-lock .shackle,.af-lock .body,.af-unlocktext,.af-essay *,.af-anno{animation:none!important;} .af-s1{opacity:0} .af-s4{opacity:1} .tw3{width:31ch;opacity:1} }
+  .af-logos{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;align-items:center;max-width:1100px;margin:clamp(30px,4vw,44px) auto 0;padding-top:clamp(20px,3vw,28px);border-top:1px solid var(--line);}
+  .af-logos .afl-label{width:100%;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--ink-soft);margin-bottom:6px;}
+  .af-logos .afl{display:flex;align-items:center;gap:7px;font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--ink-soft);}
+  .af-logos .afl .ad-logo{width:26px;height:26px;font-size:10px;border-radius:6px;}
+  /* blurred filler in demo essay */
+  .af-blur{display:flex;flex-direction:column;gap:9px;margin-top:6px;opacity:0;animation:eUp .6s ease 16.6s both;}
+  .af-blur span{height:9px;border-radius:5px;background:var(--line);filter:blur(2px);}
+  .af-blur span:nth-child(1){width:96%}.af-blur span:nth-child(2){width:99%}.af-blur span:nth-child(3){width:92%}.af-blur span:nth-child(4){width:97%}.af-blur span:nth-child(5){width:70%}
+  .af-blur-label{margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);opacity:0;animation:eUp .6s ease 17.0s both;}
+  /* search row + find my matches */
+  .af-searchrow{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:0 0 clamp(18px,2.5vw,26px);}
+  .af-find{display:inline-flex;align-items:center;gap:12px;cursor:pointer;background:#A51C30;color:#fff;border-radius:40px;padding:12px 12px 12px 22px;font-family:'Work Sans',sans-serif;font-weight:700;font-size:15px;box-shadow:0 16px 30px -16px rgba(165,28,48,0.6);}
+  .af-find-arrow{width:30px;height:30px;border-radius:50%;background:#fff;color:#A51C30;display:inline-flex;align-items:center;justify-content:center;font-weight:700;}
+  .af-searchbar{flex:1;min-width:220px;display:inline-flex;align-items:center;gap:10px;cursor:text;background:#fff;border:1px solid var(--line);border-radius:40px;padding:13px 20px;color:var(--ink-soft);font-size:15px;box-shadow:0 8px 22px -18px rgba(28,26,23,0.4);}
+  /* chat modal */
+  .af-chat-cb{position:absolute;opacity:0;pointer-events:none;}
+  .af-chat-modal{display:none;position:fixed;inset:0;z-index:80;align-items:center;justify-content:center;padding:20px;}
+  .af-chat-cb:checked ~ .af-chat-modal{display:flex;}
+  .af-chat-backdrop{position:absolute;inset:0;background:rgba(28,26,23,0.55);cursor:pointer;}
+  .af-chat-box{position:relative;z-index:1;background:var(--paper);width:100%;max-width:620px;height:min(78vh,680px);border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,0.5);}
+  .af-chat-head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line);background:#A51C30;color:#fff;}
+  .af-chat-title{font-family:'Fraunces',serif;font-weight:700;font-size:18px;}
+  .af-chat-sub{font-size:12px;color:#F3D9C6;margin-top:2px;}
+  .af-chat-x{cursor:pointer;font-size:26px;line-height:1;color:#fff;padding:2px 8px;}
+  .af-chat-body{flex:1;overflow-y:auto;padding:20px 22px;display:flex;flex-direction:column;gap:12px;}
+  .af-msg{font-size:14px;line-height:1.6;padding:12px 15px;border-radius:14px;max-width:88%;}
+  .af-ai{background:var(--card);border:1px solid var(--line);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px;}
+  .af-you{background:#A51C30;color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
+  .af-note{font-size:12px;color:var(--ink-soft);background:transparent;border:none;padding:4px 2px;}
+  .af-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .af-chip{background:rgba(165,28,48,0.08);color:#A51C30;border:1px solid rgba(165,28,48,0.25);border-radius:20px;padding:7px 13px;font-size:12.5px;font-weight:600;cursor:pointer;}
+  .af-chip:hover{background:rgba(165,28,48,0.16);}
+  .af-res{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:13px;line-height:1.5;color:var(--ink-soft);}
+  .af-res .ad-logo{width:30px;height:30px;font-size:10px;border-radius:7px;flex:none;}
+  .af-res b{color:var(--ink);}
+  .af-chat-input{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--line);background:var(--paper);}
+  .af-chat-input input{flex:1;border:1px solid var(--line);border-radius:30px;padding:12px 18px;font-size:14px;font-family:'Work Sans',sans-serif;background:#fff;}
+  .af-chat-input button{background:#A51C30;color:#fff;border:none;border-radius:30px;padding:12px 22px;font-weight:700;font-size:14px;cursor:pointer;}
+  @property --wc{syntax:'<integer>';inherits:true;initial-value:0;}
+  .tb-count::after{counter-reset:wc var(--wc);content:counter(wc) " / 650 words";}
+  @keyframes wcCount{
+    0%{--wc:0}22%{--wc:6}31%{--wc:6}31.5%{--wc:0}36%{--wc:0}53%{--wc:5}61%{--wc:5}61.5%{--wc:0}66%{--wc:0}94%{--wc:3}100%{--wc:3}
+  }
+  .af-quote{max-width:760px;margin:0 auto;padding:clamp(30px,5vw,54px) clamp(20px,5vw,64px);text-align:center;}
+  .af-quote-text{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(26px,4vw,44px);line-height:1.18;color:var(--ink);margin:0;letter-spacing:-0.01em;}
+  .af-quote-attr{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#8C2F28;}
 </style>
 </head>
 <body>
@@ -415,16 +532,133 @@
   <!-- ============ SAT COACHING VIEW ============ -->
   <!-- ============ ADMITFOLIO VIEW ============ -->
   <div id="view-admitfolio" hidden>
+    <!-- cinematic demo -->
+    <section class="af-demo">
+      <div class="af-demo-grid">
+        <div class="af-demo-left">
+          <div class="af-eyebrow">Real essays from students who got in</div>
+          <h1 class="af-h1">Stuck on your college essay? <em>Start here.</em></h1>
+          <p class="af-sub">The hardest part of a college essay is finding the right words. See how T20 admits shaped their stories, then tell yours.</p>
+          <div class="af-btns">
+            <a class="af-btn1" href="#af-browse">Browse verified essays</a>
+            <a class="af-btn2" href="mailto:chu1@swarthmore.edu?subject=Find%20my%20matches">Find my matches &rarr;</a>
+          </div>
+        </div>
+        <div class="af-stage">
+          <!-- scene 1: typewriter -->
+          <div class="af-scene af-s1">
+            <div class="af-card">
+              <div class="tb-label">COMMON APP &middot; PERSONAL STATEMENT</div>
+              <div class="tb-line">
+                <span class="tw tw1">I have always been passionate about...</span>
+                <span class="tw tw2">Ever since I was young, </span>
+                <span class="tw tw3">jkfds;alskdjf;;ASDFGHJ!!?! fjkdsl!! aksjdhf;;???!!</span>
+              </div>
+              <div class="tb-count"></div>
+            </div>
+          </div>
+          <!-- scene 2: browse peek -->
+          <div class="af-scene af-s2">
+            <div class="af-card" style="padding:0;overflow:hidden;">
+              <div class="af-peek">
+                <div class="af-peek-track">
+                  <div class="mini"><div class="mschool"><span class="ad-logo" style="background:#A51C30;">HAR</span>Harvard</div><div class="mmajor">Economics</div><div class="mtitle">This is a courage the earlier versions of me&hellip;</div></div>
+                  <div class="mini"><div class="mschool"><span class="ad-logo" style="background:#00356B;">YAL</span>Yale</div><div class="mmajor">Computer Science</div><div class="mtitle">Engineering, to me, is reimagining systems&hellip;</div></div>
+                  <div class="mini target"><div class="mschool"><span class="ad-logo" style="background:#8C1515;">STA</span>Stanford</div><div class="mmajor">Symbolic Systems</div><div class="mtitle">I watched people through security cameras&hellip;</div></div>
+                  <div class="mini"><div class="mschool"><span class="ad-logo" style="background:#800000;">UCH</span>UChicago</div><div class="mmajor">Political Science</div><div class="mtitle">The blustery wind of the Chicago winter&hellip;</div></div>
+                </div>
+                <div class="af-ripple"></div>
+                <svg class="af-cursor" viewBox="0 0 24 24" fill="#1C1A17"><path d="M4 2l16 8-7 2-2 7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <!-- scene 3: unlock -->
+          <div class="af-scene af-s3">
+            <div class="af-card">
+              <div class="af-lockwrap">
+                <svg class="af-lock" viewBox="0 0 120 120" fill="none">
+                  <path class="shackle" d="M40 56 V44 a20 20 0 0 1 40 0 V56" stroke="#7A1F2B" stroke-width="9" stroke-linecap="round"/>
+                  <rect class="body" x="34" y="54" width="52" height="44" rx="9" fill="#7A1F2B"/>
+                  <circle class="body" cx="60" cy="72" r="5" fill="#FBF9F4"/>
+                  <rect class="body" x="57.5" y="74" width="5" height="12" rx="2.5" fill="#FBF9F4"/>
+                </svg>
+                <div class="af-unlocktext">UNLOCKED &#10003;</div>
+              </div>
+            </div>
+          </div>
+          <!-- scene 4: annotated essay -->
+          <div class="af-scene af-s4">
+            <div class="af-card af-essay">
+              <div class="etag">STANFORD &middot; PERSONAL STATEMENT &middot; UNLOCKED &#10003;</div>
+              <div class="etitle">I watched people through security cameras, learning how small choices shape a community.</div>
+              <p class="epar">It started with a monitor bank in a strip-mall office: eleven screens, one folding chair, and a corner nobody else wanted. My shifts were quiet. The footage never was.</p>
+              <p class="epar epar2">People returned carts they could have abandoned. They held doors for strangers they would never see again. Around week three, the job stopped being about security and started being about attention.</p>
+              <div class="af-blur">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="af-blur-label">Full essay &middot; 648 words &mdash; for inspiration, never to copy.</div>
+              <div class="af-anno a1"><b>Hook:</b> opens in a scene, not a statement.</div>
+              <div class="af-anno a2"><b>Turn:</b> the question gets bigger than the job.</div>
+              <div class="af-anno a3"><b>Reflection:</b> ends on what it changed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="af-logos"><div class="afl-label">REAL ESSAYS FROM STUDENTS NOW AT</div><span class="afl"><span class="ad-logo" style="background:#E77500;">PRI</span>Princeton</span><span class="afl"><span class="ad-logo" style="background:#750014;">MIT</span>MIT</span><span class="afl"><span class="ad-logo" style="background:#0072CE;">COL</span>Columbia</span><span class="afl"><span class="ad-logo" style="background:#4E3629;">BRN</span>Brown</span><span class="afl"><span class="ad-logo" style="background:#990000;">PEN</span>Penn</span><span class="afl"><span class="ad-logo" style="background:#A51C30;">HAR</span>Harvard</span><span class="afl"><span class="ad-logo" style="background:#8C1515;">STA</span>Stanford</span><span class="afl"><span class="ad-logo" style="background:#00356B;">YAL</span>Yale</span></div>
+    </section>
+
+    <!-- featured quote -->
+    <section class="af-quote">
+      <blockquote class="af-quote-text">&ldquo;Try to think without words.&rdquo;</blockquote>
+      <div class="af-quote-attr">&mdash; Albert Einstein</div>
+    </section>
+
     <!-- hero -->
     <section style="padding:clamp(56px,9vw,96px) clamp(20px,5vw,64px) clamp(28px,4vw,40px);max-width:900px;">
       <div class="eyebrow" style="margin-bottom:16px;">Admitfolio</div>
       <h1 style="font-size:clamp(32px,5vw,52px);line-height:1.1;font-weight:700;">Browse the real essays that got students in</h1>
       <div class="zh-sub">名校录取者的真实文书与活动清单，按学校浏览</div>
-      <p style="margin:22px 0 0;font-size:clamp(16px,2vw,18px);line-height:1.65;color:var(--ink-soft);max-width:60ch;">Shop by the school you want to get into. Every card is a verified admit&rsquo;s essays and activity list &mdash; tap one to read the whole thing.</p>
-      <div class="mono" style="margin-top:20px;font-size:12px;letter-spacing:0.06em;color:var(--ink-soft);">Showing 70 profiles &middot; more added every cycle</div>
+      <p style="margin:22px 0 0;font-size:clamp(16px,2vw,18px);line-height:1.65;color:var(--ink-soft);max-width:60ch;">The one stop shop for writer&rsquo;s block. Sort by your dream schools. Each card is a verified admit&rsquo;s essays and activity list: our team can explain and guide you through all of them.</p>
+      <div class="mono" style="margin-top:20px;font-size:12px;letter-spacing:0.06em;color:var(--ink-soft);">Showing 2,000 Profiles from Top 50 Universities</div>
     </section>
 
-    <section style="padding:0 clamp(20px,5vw,64px) clamp(48px,7vw,72px);">
+    <section id="af-browse" style="padding:0 clamp(20px,5vw,64px) clamp(48px,7vw,72px);">
+      <input id="af-chat-cb" type="checkbox" class="af-chat-cb" hidden>
+      <div class="af-searchrow">
+        <label for="af-chat-cb" class="af-find">&#10022; Find my matches <span class="af-find-arrow">&rarr;</span></label>
+        <label for="af-chat-cb" class="af-searchbar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><span>Search school, major, prompt&hellip;</span></label>
+      </div>
+      <div class="af-chat-modal">
+        <label for="af-chat-cb" class="af-chat-backdrop"></label>
+        <div class="af-chat-box">
+          <div class="af-chat-head">
+            <div><div class="af-chat-title">Admitfolio AI</div><div class="af-chat-sub">Searches across 2,000+ verified admit essays</div></div>
+            <label for="af-chat-cb" class="af-chat-x" aria-label="Close">&times;</label>
+          </div>
+          <div class="af-chat-body" id="af-chat-body">
+            <div class="af-msg af-ai">Tell me your background, intended major, and dream schools. I&rsquo;ll surface the admitted essays that match and the patterns that made them work.</div>
+            <div class="af-chips">
+              <button class="af-chip" data-q="first gen biology public health">First-gen &middot; biology</button>
+              <button class="af-chip" data-q="computer science immigrant family">CS &middot; immigrant family</button>
+              <button class="af-chip" data-q="debate public policy">Debate &middot; public policy</button>
+              <button class="af-chip" data-q="art design portfolio">Art &middot; design</button>
+            </div>
+            <div id="af-canned">
+              <div class="af-msg af-you">First-gen, low-income, into computer science.</div>
+              <div class="af-msg af-ai"><strong>Found 12 matching essays.</strong> Students with your background most often landed at <em>Yale, Georgia Tech, Purdue, and UC San Diego</em>. The winning pattern: open on a concrete scene (not a thesis), tie the CS interest to a person or community, and end on what changed. Three to study:</div>
+              <div class="af-res"><span class="ad-logo" style="background:#00356B;">YAL</span><div><b>Yale &middot; Computer Science</b><br>&ldquo;Engineering, to me, is reimagining systems: human, mechanical, and everything in between.&rdquo;</div></div>
+              <div class="af-res"><span class="ad-logo" style="background:#003057;">GT</span><div><b>Georgia Tech &middot; Computer Science</b><br>&ldquo;My debugger has seen my tears more than most of my friends.&rdquo;</div></div>
+              <div class="af-res"><span class="ad-logo" style="background:#33261D;">PUR</span><div><b>Purdue &middot; Computer Engineering</b><br>&ldquo;I used to believe ghosts only lived in stories. But mine wears a cotton sari.&rdquo;</div></div>
+              <div class="af-msg af-ai af-note">For inspiration, never to copy. Our team can walk you through any of these live.</div>
+            </div>
+            <div id="af-results"></div>
+          </div>
+          <form class="af-chat-input" id="af-chat-form">
+            <input id="af-chat-q" placeholder="e.g. first-gen, neuroscience, Duke&hellip;" autocomplete="off">
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
       <div class="admit-grid">
 <details class="admit-card ad-featured">
   <summary>
@@ -1125,6 +1359,916 @@
     <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
   </summary>
 <div class="ad-doc"><div class="ad-doc-h">Essays</div><p>Carnegie Mellon Supplementals “Close your eyes—just listen,” instructed Mr. Inderbitzin. The voices at first murmured incoherently. Then they rose—arguing, commanding, berating—until they drowned my thoughts out completely. A scream suddenly pierced through, scaring me half to death. My mind raced and resisted, but there was no escape. I opened my eyes as the video finally ended. We’d been listening to a simulation of auditory hallucinations experienced by individuals with schizophrenia—a glimpse into a world where your own mind becomes your greatest adversary. The video lasted only five minutes, but it left me shaken long after, stunned by how little I’d truly understood before. Lessons like these from AP Psychology constantly reoriented my outlook on the brain and drove me to dig deeper: I wanted to understand how the brain’s intricate systems could create such a dissonant reality. As president of the Brain Psychology Club, I’ve worked to foster greater awareness and understanding of various mental health conditions—including our brains&#x27; responses to them. In one meeting, I handed members reversed mirrors and asked them to write simple words. As their hands trembled and their letters appeared backwards, the frustration was palpable. “Why is this so hard?” my friends mumbled. But slowly, the brain adapted, the letters became legible, and the room buzzed with realization. “This is what our brains do every day,” my advisor said, “rewiring to make sense of the world.” But not everything about the brain is adaptable. We also discuss what can’t yet be explained—like how trauma rewires pathways unconventionally or why stigma around mental illness persists. These moments remind me that there’s so much left to be uncovered about the inner workings of the brain, something I hope to do as a Neuroscience major at CMU.</p></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#C8102E;">NEU</span><span class="ad-school">Northeastern</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Business</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">Your wall decor means more than you think.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Your wall decor means more than you think.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UC Berkeley</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Northeastern</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#041E42;">GTN</span><span class="ad-school">Georgetown</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    <span class="ad-theme">Worked through school</span>
+    <p class="ad-preview">A personal statement that carried a first-gen applicant across five elite admits.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> A personal statement that carried a first-gen applicant across five elite admits.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Georgetown</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Georgetown, UC Berkeley, Barnard, Williams, UCLA</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#14213D;">SMC</span><span class="ad-school">St Mary&#x27;s College of Maryland</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Political Science</div>
+    <span class="ad-theme">Worked through school</span>
+    <p class="ad-preview">A worked-through-school student&#x27;s Common App personal statement.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> A worked-through-school student&#x27;s Common App personal statement.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">St Mary&#x27;s College of Maryland</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Denison, Reed, Northeastern, College of Wooster, Kenyon</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#CC0000;">BU</span><span class="ad-school">Boston University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Biomedical Engineering</div>
+    
+    <p class="ad-preview">A three-essay package that landed a wide engineering admit list.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> A three-essay package that landed a wide engineering admit list.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Boston University</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Boston University, Clemson, Northeastern, Tufts, UNC Chapel Hill, +3</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#006747;">TUL</span><span class="ad-school">Tulane</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Biochemistry</div>
+    
+    <p class="ad-preview">A two-essay biochemistry package.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> A two-essay biochemistry package.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">RIT</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Tulane, RIT, Minnesota</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#D44500;">SYR</span><span class="ad-school">Syracuse</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Sport Management</div>
+    
+    <p class="ad-preview">My high school professor inspired me to work harder, which set me up for success.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My high school professor inspired me to work harder, which set me up for success.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Syracuse</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Syracuse</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">USC</span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Undeclared</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">The most powerful communication happens not when you say everything you can, but when you don&#x27;t.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The most powerful communication happens not when you say everything you can, but when you don&#x27;t.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UCLA</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">USC</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003A5D;">BAR</span><span class="ad-school">Barnard College</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Neuroscience (Pre-Med)</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">I wondered, what was I left with after success?</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I wondered, what was I left with after success?</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Barnard College</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">NYU, Barnard College, Wellesley, Rutgers, Boston University, +9</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003057;">GT</span><span class="ad-school">Georgia Tech</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">A single Common App essay that got a direct Georgia Tech admit.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> A single Common App essay that got a direct Georgia Tech admit.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Georgia Tech</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Georgia Tech</span></div><div><span class="ad-k">Package</span><span class="ad-v">1 essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#57068C;">NYU</span><span class="ad-school">NYU</span><span class="ad-count">essay set</span></div>
+    <div class="ad-major">Economics</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">An immigrant-family applicant&#x27;s NYU economics essays.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> An immigrant-family applicant&#x27;s NYU economics essays.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">NYU</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">NYU, UMass Amherst, George Washington</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay set</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#57068C;">NYU</span><span class="ad-school">NYU</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Biomolecular Science</div>
+    
+    <p class="ad-preview">A three-essay NYU biomolecular science package.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> A three-essay NYU biomolecular science package.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UC Berkeley</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">NYU</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#B01823;">UMD</span><span class="ad-school">University of Maryland</span><span class="ad-count">9 essays</span></div>
+    <div class="ad-major">Biology</div>
+    
+    <p class="ad-preview">Getting over my fear of judgement.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Getting over my fear of judgement.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Maryland</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Maryland, Binghamton, Rutgers, Stony Brook, Pitt</span></div><div><span class="ad-k">Package</span><span class="ad-v">9 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#57068C;">NYU</span><span class="ad-school">NYU</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Economics</div>
+    
+    <p class="ad-preview">I don&#x27;t have Instagram, but I have a co-founded startup and a friend who flew across the country for me.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I don&#x27;t have Instagram, but I have a co-founded startup and a friend who flew across the country for me.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">NYU</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">NYU</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003660;">UCSB</span><span class="ad-school">UC Santa Barbara</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Business-Marketing</div>
+    
+    <p class="ad-preview">I grew up celebrating Thanksgiving with strangers from all over the world. I resented it.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I grew up celebrating Thanksgiving with strangers from all over the world. I resented it.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UC Santa Barbara</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Minnesota, Maryland, Rutgers, Northeastern</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003057;">GT</span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Aerospace Engineering</div>
+    
+    <p class="ad-preview">Every kid has obsessions.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Every kid has obsessions.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Georgia Tech</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Georgia Tech, Wisconsin</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#7A2048;">BMC</span><span class="ad-school">Bryn Mawr College</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Multiple majors</div>
+    <span class="ad-theme">Low-income</span>
+    <p class="ad-preview">As I move forward, I remain committed to being the &#x27;thumb&#x27; for marginalized communities.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> As I move forward, I remain committed to being the &#x27;thumb&#x27; for marginalized communities.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Bryn Mawr College</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Bryn Mawr College, Rhodes College, Duke, Connecticut College</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#0C2340;">ND</span><span class="ad-school">Notre Dame</span><span class="ad-count">6 essays</span></div>
+    <div class="ad-major">Psychology; Neuroscience &amp; Behavior</div>
+    <span class="ad-theme">Rural hometown</span>
+    <p class="ad-preview">Locking myself in a laundry room 101.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Locking myself in a laundry room 101.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Notre Dame</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Notre Dame</span></div><div><span class="ad-k">Package</span><span class="ad-v">6 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#57068C;">NYU</span><span class="ad-school">NYU</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Economics</div>
+    <span class="ad-theme">International student</span>
+    <p class="ad-preview">In Port Stanley, my small town in rural Canada, community takes the shape of faces and names.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> In Port Stanley, my small town in rural Canada, community takes the shape of faces and names.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Columbia</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">NYU</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#0021A5;">UF</span><span class="ad-school">University of Florida</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-major">Biology</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">&#x27;Tiffany,&#x27; a gentle, yet steady voice called out. I raised my head.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> &#x27;Tiffany,&#x27; a gentle, yet steady voice called out. I raised my head.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Florida</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Florida, UCF</span></div><div><span class="ad-k">Package</span><span class="ad-v">4 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">USC</span><span class="ad-school">USC</span><span class="ad-count">11 essays</span></div>
+    <div class="ad-major">Business</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">The project I&#x27;m most proud of is one my friend and I started from scratch: Gadget Givers.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The project I&#x27;m most proud of is one my friend and I started from scratch: Gadget Givers.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">USC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">USC, Georgia Tech, UT Austin, SMU, Binghamton, +1</span></div><div><span class="ad-k">Package</span><span class="ad-v">11 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">USC</span><span class="ad-school">USC</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-major">Business</div>
+    
+    <p class="ad-preview">&#x27;You girls can sit out; this is a boy&#x27;s activity.&#x27; The lingering words of my PE teacher.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> &#x27;You girls can sit out; this is a boy&#x27;s activity.&#x27; The lingering words of my PE teacher.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">USC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">NYU, USC</span></div><div><span class="ad-k">Package</span><span class="ad-v">4 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#C8102E;">NEU</span><span class="ad-school">Northeastern</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Computer Science</div>
+    
+    <p class="ad-preview">Dressed in a bright blue tracksuit, I eagerly waited for the camera to flash.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Dressed in a bright blue tracksuit, I eagerly waited for the camera to flash.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Northeastern</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Northeastern</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003057;">GT</span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Computer Science</div>
+    
+    <p class="ad-preview">My debugger has seen my tears more than most of my friends. But each time my code breaks, I start over.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My debugger has seen my tears more than most of my friends. But each time my code breaks, I start over.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">University of Washington</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Georgia Tech</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#630031;">VT</span><span class="ad-school">Virginia Tech</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">General Engineering</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">I thought it was cool. Even after Tokimune declared a surprise war on me, I still admired one thing about him.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I thought it was cool. Even after Tokimune declared a surprise war on me, I still admired one thing about him.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Virginia Tech</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Virginia Tech, Ohio State, Penn State, RIT, Maryland, +8</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#500000;">TAM</span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Biomedical Engineering</div>
+    
+    <p class="ad-preview">If it were up to my coaches, I would live my life wrapped in layers on layers of bubble wrap.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> If it were up to my coaches, I would live my life wrapped in layers on layers of bubble wrap.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Texas A&amp;M</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UT Austin, Penn State, UT Dallas, Auburn, Texas A&amp;M, +5</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#500000;">TAM</span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Biomedical Engineering</div>
+    
+    <p class="ad-preview">Twenty seconds. A moment so short it is nearly negligible, yet long enough to change everything.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Twenty seconds. A moment so short it is nearly negligible, yet long enough to change everything.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Texas A&amp;M</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UT Austin, Penn State, UT Dallas, Auburn, Texas A&amp;M, +5</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003057;">GT</span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Aerospace Engineering</div>
+    
+    <p class="ad-preview">Sweltering heat drenched my body as I photographed each cardinal direction and labeled vegetation types, 222 times.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Sweltering heat drenched my body as I photographed each cardinal direction and labeled vegetation types, 222 times.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Georgia Tech</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Georgia Tech, UGA, Clemson</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#182B49;">UCSD</span><span class="ad-school">UC San Diego</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-major">Computer Science</div>
+    <span class="ad-theme">Rural hometown</span>
+    <p class="ad-preview">Most people are fascinated by what AI can do. I&#x27;m more fascinated by what it shouldn&#x27;t.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Most people are fascinated by what AI can do. I&#x27;m more fascinated by what it shouldn&#x27;t.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UC San Diego</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Northeastern, Boston University, Wentworth, Illinois Tech</span></div><div><span class="ad-k">Package</span><span class="ad-v">4 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#7D110C;">IU</span><span class="ad-school">Indiana University</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-major">Business</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">Management gives me the people-centered foundation I need to become a successful corporate lawyer.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Management gives me the people-centered foundation I need to become a successful corporate lawyer.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Indiana</span></div><div><span class="ad-k">Package</span><span class="ad-v">5 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#13294B;">UIU</span><span class="ad-school">UIUC</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-major">Business</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">After graduating from UIUC, my goal is to attend law school and become a corporate lawyer.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> After graduating from UIUC, my goal is to attend law school and become a corporate lawyer.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Package</span><span class="ad-v">4 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#CC0000;">BU</span><span class="ad-school">Boston University</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Business</div>
+    <span class="ad-theme">Student athlete</span>
+    <p class="ad-preview">I wish I focused on how to play before focusing on how to win a volleyball game.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I wish I focused on how to play before focusing on how to win a volleyball game.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Boston University</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#A6093D;">OSU</span><span class="ad-school">Ohio State</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Business</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">I used to think business was just sales pitches, profit margins, and the stock market.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I used to think business was just sales pitches, profit margins, and the stock market.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Ohio State</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#1D2D5C;">UMBC</span><span class="ad-school">UMBC</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Financial Economics</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">When life presents you with a moment too beautiful to last, what would you do?</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> When life presents you with a moment too beautiful to last, what would you do?</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UMBC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Texas A&amp;M, UMBC, Santa Clara, San Francisco Bay University</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#881C1C;">BAT</span><span class="ad-school">Bates College</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Chemistry and Economics</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">Passing through high-tech hallways and glass doors with yellow Latin letters, I walked into the whitest laboratory I&#x27;d ever seen.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Passing through high-tech hallways and glass doors with yellow Latin letters, I walked into the whitest laboratory I&#x27;d ever seen.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Bates</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Bates, Georgetown, Wesleyan University</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#00205B;">NOVA</span><span class="ad-school">Villanova</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">My favorite word is &#x27;deb.&#x27; Most people have never used it in a sentence, but I always noticed it.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My favorite word is &#x27;deb.&#x27; Most people have never used it in a sentence, but I always noticed it.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Villanova</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">USC, Villanova, Boston College, UC Davis, UC San Diego</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#00205B;">NOVA</span><span class="ad-school">Villanova</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">Every day after school, my mom picks me up. However, one day, she wasn&#x27;t answering the phone.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Every day after school, my mom picks me up. However, one day, she wasn&#x27;t answering the phone.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Villanova</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Villanova</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#B01823;">UMD</span><span class="ad-school">University of Maryland</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Business Marketing</div>
+    <span class="ad-theme">International student</span>
+    <p class="ad-preview">Rubbing the cracked leather of the backseat, I watched Dulles Airport melt into the sticky horizon.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Rubbing the cracked leather of the backseat, I watched Dulles Airport melt into the sticky horizon.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Maryland</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Northwestern, Boston University, Brown, Northeastern, Syracuse, +5</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#CE1141;">SHU</span><span class="ad-school">Sacred Heart University</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">The ring of the bell surrounded me. The music went silent, and the gasps of five judges filled the hall.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The ring of the bell surrounded me. The music went silent, and the gasps of five judges filled the hall.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Sacred Heart</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Sacred Heart, Pitt, Rhode Island, Delaware, Duquesne, +3</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#4B2E83;">UW</span><span class="ad-school">University of Washington</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Business</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">Standing in front of the back-to-school aisles at Target, a sense of calm washes over me.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Standing in front of the back-to-school aisles at Target, a sense of calm washes over me.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">University of Washington</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#CC0000;">NCST</span><span class="ad-school">NC State</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-major">Biology / Neuroscience</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">Throughout high school I began to develop a passion for serving my church.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Throughout high school I began to develop a passion for serving my church.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">NC State</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">NC State, UNC Chapel Hill, UNC Charlotte, UNC Greensboro</span></div><div><span class="ad-k">Package</span><span class="ad-v">5 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#57068C;">NYU</span><span class="ad-school">NYU</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Global Public Health</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">I come from a Bengali community that produced revolutionary thinkers like Rabindranath Tagore and Subhas Chandra Bose.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I come from a Bengali community that produced revolutionary thinkers like Rabindranath Tagore and Subhas Chandra Bose.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">NYU</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Boston University, NYU, UIUC, University of Washington, Wisconsin</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#0064A4;">UCI</span><span class="ad-school">UC Irvine</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Mechanical Engineering</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">The day came when I looked into my closet, saw the pile of junk in the corner, and decided it was time to clean it.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The day came when I looked into my closet, saw the pile of junk in the corner, and decided it was time to clean it.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UC Irvine</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">University of San Diego, Santa Clara</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#13294B;">UNC</span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Environmental Science</div>
+    <span class="ad-theme">Student athlete</span>
+    <p class="ad-preview">&#x27;Your brain hears, not your ears.&#x27; I used to hate that poster.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> &#x27;Your brain hears, not your ears.&#x27; I used to hate that poster.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UNC Chapel Hill</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UNC Chapel Hill</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003B70;">USD</span><span class="ad-school">University of San Diego</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Biology</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">&#x27;Smile!&#x27; click. As a kid, I remember always seeing my dad with a camera at any event.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> &#x27;Smile!&#x27; click. As a kid, I remember always seeing my dad with a camera at any event.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">University of San Diego</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">University of San Diego, LMU, Chapman, University of the Pacific</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#182B49;">UCSD</span><span class="ad-school">UC San Diego</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-major">Molecular and Cell Biology</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">I was terrified on my first day.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I was terrified on my first day.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UC San Diego</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Tufts, Emory, Northeastern, Case Western</span></div><div><span class="ad-k">Package</span><span class="ad-v">5 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#C8102E;">ISU</span><span class="ad-school">Iowa State</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Entrepreneurship</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">My father had just passed away, my mother&#x27;s mental illness worsened, and there was no food at home.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My father had just passed away, my mother&#x27;s mental illness worsened, and there was no food at home.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Iowa State</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Iowa State, Houston, Oklahoma, Oklahoma State, Baylor</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">USC</span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">My grandmother and I experienced a different kind of period poverty.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My grandmother and I experienced a different kind of period poverty.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">USC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">USC, University of Washington, Chapman, Santa Clara, USF</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003057;">GT</span><span class="ad-school">Georgia Tech</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">Red berries terrify me. While a coyote&#x27;s howl spooks me, a bush of berries and broken tree stumps unnerves me more.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Red berries terrify me. While a coyote&#x27;s howl spooks me, a bush of berries and broken tree stumps unnerves me more.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Georgia Tech</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Georgia Tech, UIUC, Florida, Maryland, Virginia Tech, +1</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#003057;">GT</span><span class="ad-school">Georgia Tech</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">My aspiration to study biology at Georgia Tech is a pivotal step toward a career in medicine.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My aspiration to study biology at Georgia Tech is a pivotal step toward a career in medicine.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Georgia Tech</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Georgia State, UGA, Kennesaw State, Auburn, West Georgia</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#0021A5;">UF</span><span class="ad-school">University of Florida</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">Our car rolled to a stop.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Our car rolled to a stop.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Florida</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Florida, UCF, Florida State, Tulane, Alabama</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#98002E;">BC</span><span class="ad-school">Boston College</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Biochemistry</div>
+    
+    <p class="ad-preview">I once turned into a &#x27;red zombie&#x27; when I was young.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I once turned into a &#x27;red zombie&#x27; when I was young.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Boston College</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Boston College</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#13294B;">UNC</span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">My aunt pointed toward the thin mattress in her guest room. Cramps gripped my stomach; my mind was jumbled.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My aunt pointed toward the thin mattress in her guest room. Cramps gripped my stomach; my mind was jumbled.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UNC Chapel Hill</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UNC Chapel Hill, Georgia Tech, WashU, UGA, Emory</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#33261D;">PUR</span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Computer Science</div>
+    
+    <p class="ad-preview">I&#x27;ve learned that innovation means little if it never reaches the people who need it most.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I&#x27;ve learned that innovation means little if it never reaches the people who need it most.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">University of Washington</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Purdue</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#13294B;">UIU</span><span class="ad-school">UIUC</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Computer Science + Bioengineering</div>
+    
+    <p class="ad-preview">My grandma&#x27;s gum disease went completely unnoticed until she lost every tooth, later causing heart complications.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My grandma&#x27;s gum disease went completely unnoticed until she lost every tooth, later causing heart complications.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">University of Washington</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">USC</span><span class="ad-school">USC</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-major">Artificial Intelligence</div>
+    
+    <p class="ad-preview">The first time I ran my Oralytics oral-health model on shaky, hand-captured images, everything broke.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The first time I ran my Oralytics oral-health model on shaky, hand-captured images, everything broke.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">University of Washington</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">USC</span></div><div><span class="ad-k">Package</span><span class="ad-v">4 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#57068C;">NYU</span><span class="ad-school">NYU</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Business</div>
+    
+    <p class="ad-preview">The first version of my travel companion app, PathPal, failed for a reason I didn&#x27;t see coming.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The first version of my travel companion app, PathPal, failed for a reason I didn&#x27;t see coming.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">University of Washington</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">NYU</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#4B2E83;">UW</span><span class="ad-school">University of Washington</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Computer Science</div>
+    
+    <p class="ad-preview">My mom&#x27;s voice slapped me as she stared at the pan of sizzling cumin seeds.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My mom&#x27;s voice slapped me as she stared at the pan of sizzling cumin seeds.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">University of Washington</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Purdue, UIUC, University of Washington, CalPoly, Georgia Tech, +2</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#7A0019;">UMN</span><span class="ad-school">University of Minnesota</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Aerospace Engineering</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">An aerospace-focused package built around persistence and hands-on building.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> An aerospace-focused package built around persistence and hands-on building.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Minnesota</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#000000;">CU</span><span class="ad-school">CU Boulder</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Aerospace Engineering</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">An aerospace-focused package built around persistence and hands-on building.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> An aerospace-focused package built around persistence and hands-on building.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">CU Boulder</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#33261D;">PUR</span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Aerospace Engineering</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">An aerospace-focused package built around persistence and hands-on building.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> An aerospace-focused package built around persistence and hands-on building.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Purdue</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#13294B;">UIU</span><span class="ad-school">UIUC</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Aerospace Engineering</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">Not all puzzles come in boxes. Some are spoken, lived, and quietly built from the ground up.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Not all puzzles come in boxes. Some are spoken, lived, and quietly built from the ground up.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UIUC</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#BF5700;">UTA</span><span class="ad-school">UT Austin</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-major">Computer Science</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">Suddenly, the string snaps. I&#x27;d been practicing guitar for hours when the high E broke mid-solo.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Suddenly, the string snaps. I&#x27;d been practicing guitar for hours when the high E broke mid-solo.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UT Austin</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UT Austin, Texas A&amp;M</span></div><div><span class="ad-k">Package</span><span class="ad-v">4 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#005A43;">BING</span><span class="ad-school">Binghamton University</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Psychology</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">Before eighth grade, I was a typical talkative pre-teen; I talked so much I would get in trouble.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Before eighth grade, I was a typical talkative pre-teen; I talked so much I would get in trouble.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Binghamton</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Maryland, NYU, Virginia Tech, UConn, Vermont, +5</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#0C2340;">AUB</span><span class="ad-school">Auburn University</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">&#x27;Om asya sriman-mahApunyakarmnaH prarmbhe,&#x27; the pandit chanted.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> &#x27;Om asya sriman-mahApunyakarmnaH prarmbhe,&#x27; the pandit chanted.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Auburn</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Auburn, Northwestern, RIT, Georgia State</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#500000;">TAM</span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Mechanical Engineering</div>
+    
+    <p class="ad-preview">Terrified by what I&#x27;d heard, I entered my physics class on the first day of junior year expecting the worst.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Terrified by what I&#x27;d heard, I entered my physics class on the first day of junior year expecting the worst.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Texas A&amp;M</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Texas A&amp;M</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#333F48;">HMC</span><span class="ad-school">Harvey Mudd</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Chemistry</div>
+    <span class="ad-theme">Student athlete</span>
+    <p class="ad-preview">Recently, I&#x27;ve realized that perfection is nothing more than an illusion.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Recently, I&#x27;ve realized that perfection is nothing more than an illusion.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UC Berkeley</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Harvey Mudd</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#33261D;">PUR</span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Engineering (First-Year)</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">Purdue is renowned for its resources, especially research programs, which I believe would let me thrive.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Purdue is renowned for its resources, especially research programs, which I believe would let me thrive.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Purdue</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Purdue</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#CC0000;">BU</span><span class="ad-school">Boston University</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Biomedical Engineering</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">&#x27;¿Qué significan estos números?&#x27; asked a Hispanic woman who seemed about my mom&#x27;s age.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> &#x27;¿Qué significan estos números?&#x27; asked a Hispanic woman who seemed about my mom&#x27;s age.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Purdue</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Boston University</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#941120;">CMU</span><span class="ad-school">Carnegie Mellon</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Chemical Engineering</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">The cards we are dealt are final, but their use is endless. Believing in my cards is what helped me win.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The cards we are dealt are final, but their use is endless. Believing in my cards is what helped me win.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Carnegie Mellon</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Carnegie Mellon, CU Boulder, LMU, Louisiana State University</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#941120;">CMU</span><span class="ad-school">Carnegie Mellon</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-major">Chemical Engineering</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">A successful college experience, to me, is one where learning is constantly collaborative.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> A successful college experience, to me, is one where learning is constantly collaborative.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Carnegie Mellon</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Carnegie Mellon</span></div><div><span class="ad-k">Package</span><span class="ad-v">4 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">USC</span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Industrial &amp; Systems Engineering</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">&#x27;Fue tu decisión, no la mía&#x27; — it was your decision, not mine.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> &#x27;Fue tu decisión, no la mía&#x27; — it was your decision, not mine.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">USC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Miami, USC, Johns Hopkins</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#4B2E83;">UW</span><span class="ad-school">University of Washington</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Multiple fields</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">With a pink sweater, blue jeans, black Converse, and sweaty hands, I arrived at the Van Nuys Med Sci Building.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> With a pink sweater, blue jeans, black Converse, and sweaty hands, I arrived at the Van Nuys Med Sci Building.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Michigan (Ann Arbor)</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">University of Washington</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">USC</span><span class="ad-school">USC</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-major">Film</div>
+    
+    <p class="ad-preview">I have lived my whole life in the intersection between my race and gender.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I have lived my whole life in the intersection between my race and gender.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">USC</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">USC, Chapman, SCAD</span></div><div><span class="ad-k">Package</span><span class="ad-v">5 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#33261D;">PUR</span><span class="ad-school">Purdue University</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Computer Engineering</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">I used to believe ghosts only lived in stories. But mine wears a cotton sari and whispers my name.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I used to believe ghosts only lived in stories. But mine wears a cotton sari and whispers my name.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Purdue</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Purdue, UIUC, Michigan (Ann Arbor), Texas A&amp;M, NYU, +1</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#782F40;">FSU</span><span class="ad-school">Florida State University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Business</div>
+    
+    <p class="ad-preview">In eighth grade, I found myself in the unlikeliest of places, trapped in the whirlwind of a pandemic.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> In eighth grade, I found myself in the unlikeliest of places, trapped in the whirlwind of a pandemic.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Florida State</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Florida State, UCF, USF, Palm Beach Atlantic, Alabama, +2</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#630031;">VT</span><span class="ad-school">Virginia Tech</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Mechanical Engineering</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">Flowers can symbolize any part of life: celebration, decoration, love, grief, or a first impression.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Flowers can symbolize any part of life: celebration, decoration, love, grief, or a first impression.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Virginia Tech</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Virginia Tech, Northwestern, Case Western, Ohio State, Clemson, +9</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#13294B;">UNC</span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">10 essays</span></div>
+    <div class="ad-major">Multiple fields</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">&#x27;And they can just steal her cells?&#x27; my younger brother asked, horrified.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> &#x27;And they can just steal her cells?&#x27; my younger brother asked, horrified.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UNC Chapel Hill</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Georgia Tech, Emory, WashU, UNC Chapel Hill, UGA</span></div><div><span class="ad-k">Package</span><span class="ad-v">10 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#005A8B;">UMB</span><span class="ad-school">UMass Boston</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Psychology</div>
+    <span class="ad-theme">Low-income</span>
+    <p class="ad-preview">Balancing open-mindedness with knowing who I am was a revelation that changed my perspective on life.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Balancing open-mindedness with knowing who I am was a revelation that changed my perspective on life.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UMass Boston</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UMass Boston, UMass Dartmouth, Salem State, Bridgewater State</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#500000;">TAM</span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">General Engineering</div>
+    
+    <p class="ad-preview">The lights dimmed. Excitedly, Senora Herrera urged us, &#x27;Stand up, everyone!&#x27;</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The lights dimmed. Excitedly, Senora Herrera urged us, &#x27;Stand up, everyone!&#x27;</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Texas A&amp;M</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Texas A&amp;M, Virginia Tech, UIUC, Maryland, +3</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">USC</span><span class="ad-school">USC</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-major">Undeclared Engineering</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">As someone with a passion for math and tech but a deep love for the arts, each side is essential to me.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> As someone with a passion for math and tech but a deep love for the arts, each side is essential to me.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UCLA</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">USC</span></div><div><span class="ad-k">Package</span><span class="ad-v">5 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#33342E;">VAN</span><span class="ad-school">Vanderbilt University</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-major">Multiple fields</div>
+    
+    <p class="ad-preview">At my first high school orchestra rehearsal, I was the only female trumpet player.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> At my first high school orchestra rehearsal, I was the only female trumpet player.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Northwestern</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Vanderbilt</span></div><div><span class="ad-k">Package</span><span class="ad-v">2 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#041E42;">PSU</span><span class="ad-school">Penn State</span><span class="ad-count">essay</span></div>
+    <div class="ad-major">Computer Science</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">It was 6:27 P.M. on a sunny June evening in 2019 — three more minutes.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> It was 6:27 P.M. on a sunny June evening in 2019 — three more minutes.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Penn State</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Temple, Drexel, Maryland, Penn State</span></div><div><span class="ad-k">Package</span><span class="ad-v">essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#00205B;">RICE</span><span class="ad-school">Rice</span><span class="ad-count">7 essays</span></div>
+    <div class="ad-major">Computer Science</div>
+    <span class="ad-theme">QuestBridge Scholar</span>
+    <p class="ad-preview">A single drop hits the lake at the same instant a YouTube workout video begins to play.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> A single drop hits the lake at the same instant a YouTube workout video begins to play.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Rice</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Rice</span></div><div><span class="ad-k">Package</span><span class="ad-v">7 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#002D72;">JHU</span><span class="ad-school">Johns Hopkins</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">My phone screen lights up. “Wind ensemble results are out” pops up on the screen.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> My phone screen lights up. “Wind ensemble results are out” pops up on the screen.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Northwestern</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Johns Hopkins</span></div><div><span class="ad-k">Package</span><span class="ad-v">1 essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#4E2A84;">NW</span><span class="ad-school">Northwestern</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Business Marketing</div>
+    <span class="ad-theme">International student</span>
+    <p class="ad-preview">I didn’t expect clicking “Upload” on a video to reveal a new kind of audience.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> I didn’t expect clicking “Upload” on a video to reveal a new kind of audience.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Maryland</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Northwestern</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#990000;">PEN</span><span class="ad-school">UPenn</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-major">Chemical and Biomolecular Engineering +2</div>
+    <span class="ad-theme">Immigrant family</span>
+    <p class="ad-preview">In detailing my passions for science and good food.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> In detailing my passions for science and good food.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UPenn</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">UPenn, Binghamton, Stony Brook</span></div><div><span class="ad-k">Package</span><span class="ad-v">4 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#8C1515;">STA</span><span class="ad-school">Stanford</span><span class="ad-count">6 essays</span></div>
+    <div class="ad-major">Engineering &amp; Science</div>
+    
+    <p class="ad-preview">Cedranone: an exquisite molecule of 15 Carbon and 24 Hydrogen atoms.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Cedranone: an exquisite molecule of 15 Carbon and 24 Hydrogen atoms.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Stanford</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Stanford, UPenn, UC Berkeley, Brown, Cornell, +7</span></div><div><span class="ad-k">Package</span><span class="ad-v">6 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#002D72;">JHU</span><span class="ad-school">Johns Hopkins</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-major">Economics</div>
+    
+    <p class="ad-preview">The “first” that has shaped me most is the Afghan women I teach.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> The “first” that has shaped me most is the Afghan women I teach.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Cornell</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Johns Hopkins</span></div><div><span class="ad-k">Package</span><span class="ad-v">1 essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#4E2A84;">NW</span><span class="ad-school">Northwestern</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    
+    <p class="ad-preview">“Because I said so” — the soundtrack of my childhood.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> “Because I said so” — the soundtrack of my childhood.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Northwestern</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Northwestern, Johns Hopkins, Vanderbilt</span></div><div><span class="ad-k">Package</span><span class="ad-v">3 essays</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#8C1515;">STA</span><span class="ad-school">Stanford</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-major">Common App Personal Statement</div>
+    <span class="ad-theme">First gen</span>
+    <p class="ad-preview">Fixing radios with my grandfather taught me how things really work.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> Fixing radios with my grandfather taught me how things really work.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">Stanford</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Stanford, MIT, UCLA</span></div><div><span class="ad-k">Package</span><span class="ad-v">1 essay</span></div></div></div>
+</details>
+<details class="admit-card ad-import">
+  <summary>
+    <div class="ad-top"><span class="ad-logo" style="background:#2774AE;">UCB</span><span class="ad-school">UC Berkeley</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-major">Public Policy +1</div>
+    
+    <p class="ad-preview">“I think so,” I reply, gripping the stick tightly. Then it happens.</p>
+    <div class="ad-cta">Read the essays &amp; activity list <span class="ad-caret">&rsaquo;</span></div>
+  </summary>
+  <div class="ad-doc"><div class="ad-doc-h">Listing</div><p><strong>Preview:</strong> “I think so,” I reply, gripping the stick tightly. Then it happens.</p><div class="ad-meta"><div><span class="ad-k">Seller attends</span><span class="ad-v">UC Berkeley</span></div><div><span class="ad-k">Accepted at</span><span class="ad-v">Boston University, USC</span></div><div><span class="ad-k">Package</span><span class="ad-v">1 essay</span></div></div></div>
 </details>
       </div>
     </section>
@@ -1827,5 +2971,60 @@
 })();
 </script>
 
+<script>
+(function(){
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+  function collect(){
+    var out=[];
+    document.querySelectorAll('#view-admitfolio .admit-card').forEach(function(card){
+      var school=(card.querySelector('.ad-school')||{}).textContent||'';
+      var major=(card.querySelector('.ad-major')||{}).textContent||'';
+      var prev=(card.querySelector('.ad-preview')||{}).textContent||'';
+      var tag=(card.querySelector('.ad-theme')||{}).textContent||'';
+      var meta=card.querySelector('.ad-meta');
+      var accepted=meta?meta.textContent:'';
+      var logo=card.querySelector('.ad-logo');
+      var badge=logo?logo.outerHTML:'';
+      out.push({school:school,major:major,prev:prev,tag:tag,accepted:accepted,badge:badge,
+                hay:(school+' '+major+' '+prev+' '+tag+' '+accepted).toLowerCase()});
+    });
+    return out;
+  }
+  var STOP={'the':1,'a':1,'an':1,'and':1,'or':1,'to':1,'of':1,'in':1,'for':1,'im':1,'i':1,'my':1,'me':1,'with':1,'into':1,'at':1,'on':1};
+  function run(q){
+    var body=document.getElementById('af-chat-body');
+    var canned=document.getElementById('af-canned'); if(canned) canned.style.display='none';
+    var res=document.getElementById('af-results'); if(!res) return;
+    var toks=q.toLowerCase().split(/[^a-z0-9]+/).filter(function(t){return t.length>2 && !STOP[t];});
+    var data=collect();
+    var scored=data.map(function(d){var s=0;toks.forEach(function(t){if(d.hay.indexOf(t)>=0)s++;});return {d:d,s:s};})
+                   .filter(function(x){return x.s>0;}).sort(function(a,b){return b.s-a.s;});
+    var top=scored.slice(0,5);
+    var youHtml='<div class="af-msg af-you">'+esc(q)+'</div>';
+    var out=youHtml;
+    if(top.length===0){
+      out+='<div class="af-msg af-ai">I couldn\'t find a close match for that yet. Try a major, a background (first-gen, immigrant family), or a school name \u2014 or ask our team and we\'ll pull the right examples.</div>';
+    } else {
+      var schools={},majors={};
+      top.forEach(function(x){schools[x.d.school]=1;});
+      var schoolList=Object.keys(schools).slice(0,4).join(', ');
+      out+='<div class="af-msg af-ai"><strong>Found '+scored.length+' matching essays.</strong> Closest fits are at <em>'+esc(schoolList)+'</em>. The pattern that wins: open in a concrete scene, tie your interest to a person or community, and close on what changed. Top matches:</div>';
+      top.forEach(function(x){
+        out+='<div class="af-res">'+x.d.badge+'<div><b>'+esc(x.d.school)+' \u00b7 '+esc(x.d.major)+'</b><br>'+esc(x.d.prev)+'</div></div>';
+      });
+      out+='<div class="af-msg af-ai af-note">For inspiration, never to copy. Our team can walk you through any of these live.</div>';
+    }
+    res.innerHTML=out;
+    body.scrollTop=body.scrollHeight;
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var form=document.getElementById('af-chat-form');
+    if(form){form.addEventListener('submit',function(e){e.preventDefault();var q=document.getElementById('af-chat-q').value.trim();if(q)run(q);document.getElementById('af-chat-q').value='';});}
+    document.querySelectorAll('.af-chip').forEach(function(ch){ch.addEventListener('click',function(){run(ch.getAttribute('data-q'));});});
+    var open=document.getElementById('af-chat-cb');
+    if(open){open.addEventListener('change',function(){if(open.checked){setTimeout(function(){var i=document.getElementById('af-chat-q');if(i)i.focus();},60);}});}
+  });
+})();
+</script>
 </body>
 </html>
