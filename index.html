@@ -178,10 +178,8 @@
   .admit-card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
   .admit-card summary{list-style:none;cursor:pointer;padding:clamp(18px,2.4vw,22px);display:flex;flex-direction:column;gap:10px;}
   .admit-card summary::-webkit-details-marker{display:none;}
-  .admit-card .ad-logo{width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;flex:none;background:#fff!important;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 8px rgba(28,26,23,0.08);padding:4px;}
+  .admit-card .ad-logo{width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;flex:none;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.07);}
   .admit-card .ad-logo img{width:100%;height:100%;object-fit:contain;display:block;}
-  .admit-card .ad-logo.ad-logo-dual{gap:1px;padding:3px;}
-  .admit-card .ad-logo.ad-logo-dual img{width:50%;height:100%;object-fit:contain;}
   .admit-card .ad-top{display:flex;align-items:center;gap:8px;}
   .admit-card .ad-emoji{font-size:18px;line-height:1;flex:none;}
   .admit-card .ad-school{font-weight:700;font-size:15px;color:var(--ink);}
@@ -238,7 +236,7 @@
   .af-s2{animation:sceneFade 4.0s linear 9.0s forwards;}
   .af-s3{animation:sceneFade 2.4s linear 12.8s forwards;}
   @keyframes sceneFade{0%{opacity:0}14%{opacity:1}86%{opacity:1}100%{opacity:0}}
-  .af-s4{animation:s4hold 6.8s ease 15.2s forwards;}
+  .af-s4{animation:s4hold 9.0s ease 15.2s forwards;}
   @keyframes sceneIn{0%{opacity:0}100%{opacity:1}}
   /* scene 2 card stack */
   .af-peek{position:absolute;inset:0;overflow:hidden;border-radius:22px;}
@@ -246,6 +244,9 @@
   @keyframes peekScroll{0%{transform:translateY(30px)}100%{transform:translateY(-150px)}}
   .mini{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 12px 28px -22px rgba(28,26,23,0.4);}
   .mini .mschool{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;}
+
+  .mini .ad-logo{width:26px;height:26px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);}
+  .mini .ad-logo img{width:100%;height:100%;object-fit:contain;display:block;}
   .mini .mmajor{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#8C2F28;margin:8px 0 4px;}
   .mini .mtitle{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--ink);}
   .mini.target{animation:targetPulse 1.1s ease 11.4s both;}
@@ -263,23 +264,23 @@
   @keyframes lockPop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
   .af-unlocktext{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;color:#7A1F2B;opacity:0;animation:sceneIn .5s ease 14.0s both;}
   /* scene 4 essay */
-  .af-essay{height:100%;overflow:hidden;display:flex;flex-direction:column;}
+  .af-essay{height:100%;overflow:hidden;display:flex;flex-direction:row;gap:clamp(12px,1.8vw,22px);align-items:stretch;}
   .af-essay .etag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#7A1F2B;opacity:0;animation:eUp .6s ease 15.4s both;}
-  .af-essay .etitle{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(19px,2.2vw,26px);line-height:1.15;color:var(--ink);margin:12px 0 14px;opacity:0;animation:eUp .6s ease 15.7s both;}
+  .af-essay .etitle{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(18px,2.05vw,24px);line-height:1.13;color:var(--ink);margin:10px 0 12px;opacity:0;animation:eUp .6s ease 15.7s both;}
   .af-essay .epar{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 10px;opacity:0;animation:eUp .6s ease 16.1s both;}
   .af-essay .epar2{animation-delay:16.4s;}
   @keyframes eUp{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
-  .af-anno{position:absolute;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.35;color:#fff;background:#7A1F2B;padding:8px 12px;border-radius:10px;box-shadow:0 12px 24px -12px rgba(122,31,43,0.6);opacity:0;max-width:200px;}
+  .af-anno{position:static;font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.35;color:#fff;background:#7A1F2B;padding:8px 12px;border-radius:10px;box-shadow:0 12px 24px -12px rgba(122,31,43,0.6);opacity:0;}
   .af-anno b{color:#F3D9C6;}
-  .af-anno.a1{left:-6%;top:34%;animation:annoIn .5s ease 16.8s both;}
-  .af-anno.a2{right:-4%;top:54%;background:#8C2F28;animation:annoIn .5s ease 17.3s both;}
-  .af-anno.a3{left:2%;bottom:8%;background:#9a4a44;animation:annoIn .5s ease 17.8s both;}
+  .af-anno.a1{animation:annoIn .5s ease 16.8s both;}
+  .af-anno.a2{background:#8C2F28;animation:annoIn .5s ease 17.3s both;}
+  .af-anno.a3{background:#9a4a44;animation:annoIn .5s ease 17.8s both;}
   @keyframes annoIn{0%{opacity:0;transform:translateY(8px) scale(.9)}100%{opacity:1;transform:translateY(0) scale(1)}}
   @media (prefers-reduced-motion: reduce){ .af-scene,.tw,.mini,.af-cursor,.af-ripple,.af-lock .shackle,.af-lock .body,.af-unlocktext,.af-essay *,.af-anno{animation:none!important;} .af-s1{opacity:0} .af-s4{opacity:1} .tw3{width:31ch;opacity:1} }
   .af-logos{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;align-items:center;max-width:1100px;margin:clamp(30px,4vw,44px) auto 0;padding-top:clamp(20px,3vw,28px);border-top:1px solid var(--line);}
   .af-logos .afl-label{width:100%;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--ink-soft);margin-bottom:6px;}
   .af-logos .afl{display:flex;align-items:center;gap:7px;font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--ink-soft);}
-  .af-logos .afl .ad-logo{width:26px;height:26px;font-size:10px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);}
+  .af-logos .afl .ad-logo{width:26px;height:26px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);flex:none;}
   .af-logos .afl .ad-logo img{width:100%;height:100%;object-fit:contain;display:block;}
   /* blurred filler in demo essay */
   .af-blur{display:flex;flex-direction:column;gap:9px;margin-top:6px;opacity:0;animation:eUp .6s ease 16.6s both;}
@@ -310,7 +311,8 @@
   .af-chip{background:rgba(165,28,48,0.08);color:#A51C30;border:1px solid rgba(165,28,48,0.25);border-radius:20px;padding:7px 13px;font-size:12.5px;font-weight:600;cursor:pointer;}
   .af-chip:hover{background:rgba(165,28,48,0.16);}
   .af-res{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:13px;line-height:1.5;color:var(--ink-soft);}
-  .af-res .ad-logo{width:30px;height:30px;font-size:10px;border-radius:7px;flex:none;}
+  .af-res .ad-logo{width:30px;height:30px;min-width:30px;max-width:30px;min-height:30px;max-height:30px;border-radius:7px;flex:0 0 30px;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.07);}
+  .af-res .ad-logo img{width:100%;height:100%;max-width:30px;max-height:30px;object-fit:contain;display:block;}
   .af-res b{color:var(--ink);}
   .af-chat-input{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--line);background:var(--paper);}
   .af-chat-input input{flex:1;border:1px solid var(--line);border-radius:30px;padding:12px 18px;font-size:14px;font-family:'Work Sans',sans-serif;background:#fff;}
@@ -324,10 +326,45 @@
   .af-quote-text{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(26px,4vw,44px);line-height:1.18;color:var(--ink);margin:0;letter-spacing:-0.01em;}
   .af-quote-attr{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#8C2F28;}
   @keyframes s4hold{0%{opacity:0}12%{opacity:1}86%{opacity:1}100%{opacity:0}}
-  .af-s5{animation:sceneIn 1s ease 22.2s forwards;}
-  .af-anno.b1{left:-6%;top:32%;animation:annoIn .5s ease 24.6s both;}
-  .af-anno.b2{right:-4%;top:52%;background:#8C2F28;animation:annoIn .5s ease 25.1s both;}
-  .af-anno.b3{left:2%;bottom:8%;background:#9a4a44;animation:annoIn .5s ease 25.6s both;}
+  .af-s5{animation:s5hold 13.0s ease 31.0s forwards;}
+  .af-anno.b1{animation:annoIn .5s ease 33.6s both;}
+  .af-anno.b2{background:#8C2F28;animation:annoIn .5s ease 34.1s both;}
+  .af-anno.b3{background:#9a4a44;animation:annoIn .5s ease 34.6s both;}
+
+  /* ===== v72: two-column essays + question frames + more essays ===== */
+  .af-essay .ecol{flex:1 1 60%;min-width:0;display:flex;flex-direction:column;overflow:hidden;}
+  .af-annocol{flex:0 0 34%;display:flex;flex-direction:column;justify-content:center;gap:clamp(8px,1.4vw,14px);}
+  .af-essay .ecol .epar{font-size:12.5px;line-height:1.45;margin-bottom:7px;}
+  .af-essay .ecol .af-blur{margin-top:4px;gap:7px;}
+  .af-essay .ecol .af-blur-label{margin-top:12px;}
+  @keyframes s5hold{0%{opacity:0}7%{opacity:1}92%{opacity:1}100%{opacity:0}}
+  @keyframes essHold{0%{opacity:0}9%{opacity:1}90%{opacity:1}100%{opacity:0}}
+  .af-q .qwrap{margin-top:20px;font-family:'Fraunces',serif;font-weight:700;font-size:clamp(13px,1.5vw,18px);line-height:1.55;color:var(--ink);}
+  .af-q .qline{display:block;white-space:nowrap;overflow:hidden;width:0;}
+  .af-q .q1b,.af-q .q2b,.af-q .q3b{color:#7A1F2B;}
+  .af-q .qhint{margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--ink-soft);opacity:0;}
+  @keyframes qtype{0%{width:0}100%{width:100%}}
+  @keyframes qhold{0%{opacity:0}7%{opacity:1}90%{opacity:1}100%{opacity:0}}
+  .af-q1{animation:qhold 7.0s ease 24.0s forwards;}
+  .af-q2{animation:qhold 7.0s ease 44.0s forwards;}
+  .af-q3{animation:qhold 7.0s ease 62.0s forwards;}
+  .q1a{animation:qtype 2.2s steps(40) 24.4s both;}
+  .q1b{animation:qtype 2.0s steps(34) 26.7s both;}
+  .af-q1 .qhint{animation:sceneIn .5s ease 29.2s both;}
+  .q2a{animation:qtype 2.0s steps(36) 44.4s both;}
+  .q2b{animation:qtype 2.0s steps(34) 46.5s both;}
+  .af-q2 .qhint{animation:sceneIn .5s ease 49.0s both;}
+  .q3a{animation:qtype 2.2s steps(40) 62.4s both;}
+  .q3b{animation:qtype 2.0s steps(38) 64.7s both;}
+  .af-q3 .qhint{animation:sceneIn .5s ease 67.2s both;}
+  .af-s6{animation:essHold 11.0s ease 51.0s forwards;}
+  .af-anno.c1{animation:annoIn .5s ease 53.6s both;}
+  .af-anno.c2{background:#8C2F28;animation:annoIn .5s ease 54.1s both;}
+  .af-anno.c3{background:#9a4a44;animation:annoIn .5s ease 54.6s both;}
+  .af-s7{animation:sceneIn 1s ease 69.0s forwards;}
+  .af-anno.d1{animation:annoIn .5s ease 71.6s both;}
+  .af-anno.d2{background:#8C2F28;animation:annoIn .5s ease 72.1s both;}
+  .af-anno.d3{background:#9a4a44;animation:annoIn .5s ease 72.6s both;}
 </style>
 </head>
 <body>
@@ -571,10 +608,10 @@
             <div class="af-card" style="padding:0;overflow:hidden;">
               <div class="af-peek">
                 <div class="af-peek-track">
-                  <div class="mini"><div class="mschool"><span class="ad-logo" style="background:#A51C30;">HAR</span>Harvard</div><div class="mmajor">Economics</div><div class="mtitle">This is a courage the earlier versions of me&hellip;</div></div>
-                  <div class="mini"><div class="mschool"><span class="ad-logo" style="background:#00356B;">YAL</span>Yale</div><div class="mmajor">Computer Science</div><div class="mtitle">Engineering, to me, is reimagining systems&hellip;</div></div>
-                  <div class="mini target"><div class="mschool"><span class="ad-logo" style="background:#8C1515;">STA</span>Stanford</div><div class="mmajor">Symbolic Systems</div><div class="mtitle">I watched people through security cameras&hellip;</div></div>
-                  <div class="mini"><div class="mschool"><span class="ad-logo" style="background:#800000;">UCH</span>UChicago</div><div class="mmajor">Political Science</div><div class="mtitle">The blustery wind of the Chicago winter&hellip;</div></div>
+                  <div class="mini"><div class="mschool"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="HAR school logo" loading="lazy"></span>Harvard</div><div class="mmajor">Economics</div><div class="mtitle">This is a courage the earlier versions of me&hellip;</div></div>
+                  <div class="mini"><div class="mschool"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="YAL school logo" loading="lazy"></span>Yale</div><div class="mmajor">Computer Science</div><div class="mtitle">Engineering, to me, is reimagining systems&hellip;</div></div>
+                  <div class="mini target"><div class="mschool"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span>Stanford</div><div class="mmajor">Symbolic Systems</div><div class="mtitle">I watched people through security cameras&hellip;</div></div>
+                  <div class="mini"><div class="mschool"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=uchicago.edu&sz=128" alt="UCH school logo" loading="lazy"></span>UChicago</div><div class="mmajor">Political Science</div><div class="mtitle">The blustery wind of the Chicago winter&hellip;</div></div>
                 </div>
                 <div class="af-ripple"></div>
                 <svg class="af-cursor" viewBox="0 0 24 24" fill="#1C1A17"><path d="M4 2l16 8-7 2-2 7z"/></svg>
@@ -598,36 +635,111 @@
           <!-- scene 4: annotated essay -->
           <div class="af-scene af-s4">
             <div class="af-card af-essay">
-              <div class="etag">STANFORD &middot; PERSONAL STATEMENT &middot; UNLOCKED &#10003;</div>
-              <div class="etitle">I watched people through security cameras, learning how small choices shape a community.</div>
-              <p class="epar">It started with a monitor bank in a strip-mall office: eleven screens, one folding chair, and a corner nobody else wanted. My shifts were quiet. The footage never was.</p>
-              <p class="epar epar2">People returned carts they could have abandoned. They held doors for strangers they would never see again. Around week three, the job stopped being about security and started being about attention.</p>
-              <div class="af-blur">
-                <span></span><span></span><span></span><span></span><span></span>
+              <div class="ecol">
+                <div class="etag">STANFORD &middot; PERSONAL STATEMENT &middot; UNLOCKED &#10003;</div>
+                <div class="etitle">I watched people through security cameras &mdash; small choices shape a community.</div>
+                <p class="epar">Eleven screens, one folding chair. My shifts were quiet; the footage never was.</p>
+                <p class="epar epar2">People returned carts, held doors. By week three the job was about attention, not security.</p>
+                <div class="af-blur"><span></span><span></span><span></span></div>
+                <div class="af-blur-label">Full essay &middot; 648 words &mdash; for inspiration, never to copy.</div>
               </div>
-              <div class="af-blur-label">Full essay &middot; 648 words &mdash; for inspiration, never to copy.</div>
-              <div class="af-anno a1"><b>Hook:</b> opens in a scene, not a statement.</div>
-              <div class="af-anno a2"><b>Turn:</b> the question gets bigger than the job.</div>
-              <div class="af-anno a3"><b>Reflection:</b> ends on what it changed.</div>
+              <div class="af-annocol">
+                <div class="af-anno a1"><b>Hook:</b> opens in a scene, not a statement.</div>
+                <div class="af-anno a2"><b>Turn:</b> the question grows bigger than the job.</div>
+                <div class="af-anno a3"><b>Reflection:</b> ends on what it changed.</div>
+              </div>
+            </div>
+          </div>
+          <!-- scene Q1: question before international essay -->
+          <div class="af-scene af-q af-q1">
+            <div class="af-card">
+              <div class="tb-label">ADMITFOLIO &middot; ASK THE ESSAYS</div>
+              <div class="qwrap">
+                <span class="qline q1a">How can an international student from Shanghai</span>
+                <span class="qline q1b">get accepted into all 8 Ivies? &#22825;&#25165;&#22899;&#23401;</span>
+              </div>
+              <div class="qhint">Searching 2,000 verified profiles&hellip;</div>
             </div>
           </div>
           <!-- scene 5: second essay (International Student, 8 Ivies) -->
           <div class="af-scene af-s5">
             <div class="af-card af-essay">
-              <div class="etag" style="animation-delay:22.4s">INTERNATIONAL STUDENT &middot; ACCEPTED TO ALL 8 IVIES &middot; UNLOCKED &#10003;</div>
-              <div class="etitle" style="animation-delay:22.8s">Yellow, blue, red &mdash; my primaries are art, debate, and activism.</div>
-              <p class="epar" style="animation-delay:23.2s">When I arrived in the US as a little girl, grasping English was like deciphering ancient Egyptian. Every day was a challenge, but the yellow leaves outside gave me a glimmer of hope.</p>
-              <p class="epar" style="animation-delay:23.6s">In art class, I picked up a paintbrush and captured the aureate scenery around me. Art was a universal language, and one I spoke fluently even after moving across the world.</p>
-              <div class="af-blur" style="animation-delay:24.0s"><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="af-blur-label" style="animation-delay:24.4s">Full essay &middot; 632 words &mdash; for inspiration, never to copy.</div>
-              <div class="af-anno b1"><b>Hook:</b> a metaphor, not a thesis.</div>
-              <div class="af-anno b2"><b>Motif:</b> color returns as &ldquo;primaries.&rdquo;</div>
-              <div class="af-anno b3"><b>Arc:</b> struggle becomes fluency.</div>
+              <div class="ecol">
+                <div class="etag" style="animation-delay:31.3s">INTERNATIONAL STUDENT &middot; ACCEPTED TO ALL 8 IVIES &middot; UNLOCKED &#10003;</div>
+                <div class="etitle" style="animation-delay:31.7s">Yellow, blue, red &mdash; my primaries are art, debate, and activism.</div>
+                <p class="epar" style="animation-delay:32.1s">Arriving in the US, English felt like ancient Egyptian. The yellow leaves outside gave me a glimmer of hope.</p>
+                <p class="epar" style="animation-delay:32.5s">In art class I picked up a brush and painted the aureate world &mdash; a universal language I already spoke.</p>
+                <div class="af-blur" style="animation-delay:32.9s"><span></span><span></span><span></span></div>
+                <div class="af-blur-label" style="animation-delay:33.3s">Full essay &middot; 632 words &mdash; for inspiration, never to copy.</div>
+              </div>
+              <div class="af-annocol">
+                <div class="af-anno b1"><b>Hook:</b> a metaphor, not a thesis.</div>
+                <div class="af-anno b2"><b>Motif:</b> color returns as &ldquo;primaries.&rdquo;</div>
+                <div class="af-anno b3"><b>Arc:</b> struggle becomes fluency.</div>
+              </div>
+            </div>
+          </div>
+          <!-- scene Q2: question before AI/Finance example -->
+          <div class="af-scene af-q af-q2">
+            <div class="af-card">
+              <div class="tb-label">ADMITFOLIO &middot; ASK THE ESSAYS</div>
+              <div class="qwrap">
+                <span class="qline q2a">How can I build activities about AI and</span>
+                <span class="qline q2b">Finance if I don&rsquo;t know where to start?</span>
+              </div>
+              <div class="qhint">Pulling matching profiles&hellip;</div>
+            </div>
+          </div>
+          <!-- scene 6: successful example (Berkeley Haas & Wharton) -->
+          <div class="af-scene af-s6">
+            <div class="af-card af-essay">
+              <div class="ecol">
+                <div class="etag" style="animation-delay:51.3s">SUCCESSFUL EXAMPLE &middot; UC BERKELEY HAAS &amp; UPENN WHARTON &middot; UNLOCKED &#10003;</div>
+                <div class="etitle" style="animation-delay:51.7s">Start here: how one AI &amp; Finance applicant built her activities from zero.</div>
+                <p class="epar" style="animation-delay:52.1s">COO of a VR training startup &mdash; patent-pending AI, $100K pre-seed, 90% cost cut, pitched to VCs.</p>
+                <p class="epar" style="animation-delay:52.5s">Founder of a STEM + finance nonprofit &mdash; 50+ volunteers, 1.2K students, a UN partnership.</p>
+                <div class="af-blur" style="animation-delay:52.9s"><span></span><span></span><span></span></div>
+                <div class="af-blur-label" style="animation-delay:53.3s">Full activities list &middot; 5 roles &mdash; a blueprint, never to copy.</div>
+              </div>
+              <div class="af-annocol">
+                <div class="af-anno c1"><b>Start small:</b> turn a class project into a real product.</div>
+                <div class="af-anno c2"><b>Stack it:</b> pair an AI build with a finance angle.</div>
+                <div class="af-anno c3"><b>Go public:</b> a patent, a nonprofit, a pitch &mdash; real proof.</div>
+              </div>
+            </div>
+          </div>
+          <!-- scene Q3: question before Chinese-culture essay -->
+          <div class="af-scene af-q af-q3">
+            <div class="af-card">
+              <div class="tb-label">ADMITFOLIO &middot; ASK THE ESSAYS</div>
+              <div class="qwrap">
+                <span class="qline q3a">How do I write about Chinese culture without</span>
+                <span class="qline q3b">being stereotyped by the admissions&rsquo; office?</span>
+              </div>
+              <div class="qhint">Finding essays that broke the mold&hellip;</div>
+            </div>
+          </div>
+          <!-- scene 7: heritage essay (Yale & Harvard) -->
+          <div class="af-scene af-s7">
+            <div class="af-card af-essay">
+              <div class="ecol">
+                <div class="etag" style="animation-delay:69.3s">MANCHU HERITAGE &middot; ACCEPTED TO YALE &amp; HARVARD &middot; UNLOCKED &#10003;</div>
+                <div class="etitle" style="animation-delay:69.7s">Sini gebu Han sanmubi &mdash; &ldquo;My name is Han,&rdquo; my first sentence in Manchu.</div>
+                <p class="epar" style="animation-delay:70.1s">Grandma insisted on the old rituals and language; I begged for one more myth, one more word, before bed.</p>
+                <p class="epar" style="animation-delay:70.5s">&ldquo;Horses have souls,&rdquo; she said. &ldquo;All things have souls.&rdquo; Manchurians saw the galaxies as a herd.</p>
+                <div class="af-blur" style="animation-delay:70.9s"><span></span><span></span><span></span></div>
+                <div class="af-blur-label" style="animation-delay:71.3s">Full essay &middot; 641 words &mdash; for inspiration, never to copy.</div>
+              </div>
+              <div class="af-annocol">
+                <div class="af-anno d1"><b>Hook:</b> opens in the language itself, untranslated.</div>
+                <div class="af-anno d2"><b>Specific:</b> one grandmother, real myths &mdash; not &ldquo;my culture.&rdquo;</div>
+                <div class="af-anno d3"><b>Universal:</b> &ldquo;all things have souls&rdquo; lands the theme.</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="af-logos"><div class="afl-label">REAL ESSAYS FROM STUDENTS NOW AT</div><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="Princeton logo" loading="lazy"></span>Princeton</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=mit.edu&sz=128" alt="MIT logo" loading="lazy"></span>MIT</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="Columbia logo" loading="lazy"></span>Columbia</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=brown.edu&sz=128" alt="Brown logo" loading="lazy"></span>Brown</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="Penn logo" loading="lazy"></span>Penn</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="Harvard logo" loading="lazy"></span>Harvard</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span>Stanford</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="Yale logo" loading="lazy"></span>Yale</span></div>
+      <div class="af-logos"><div class="afl-label">REAL ESSAYS FROM STUDENTS NOW AT</div><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="PRI school logo" loading="lazy"></span>Princeton</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=mit.edu&sz=128" alt="MIT school logo" loading="lazy"></span>MIT</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="COL school logo" loading="lazy"></span>Columbia</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=brown.edu&sz=128" alt="BRN school logo" loading="lazy"></span>Brown</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span>Penn</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="HAR school logo" loading="lazy"></span>Harvard</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span>Stanford</span><span class="afl"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="YAL school logo" loading="lazy"></span>Yale</span></div>
     </section>
 
     <!-- featured quote -->
@@ -669,9 +781,9 @@
             <div id="af-canned">
               <div class="af-msg af-you">First-gen, low-income, into computer science.</div>
               <div class="af-msg af-ai"><strong>Found 12 matching essays.</strong> Students with your background most often landed at <em>Yale, Georgia Tech, Purdue, and UC San Diego</em>. The winning pattern: open on a concrete scene (not a thesis), tie the CS interest to a person or community, and end on what changed. Three to study:</div>
-              <div class="af-res"><span class="ad-logo" style="background:#00356B;">YAL</span><div><b>Yale &middot; Computer Science</b><br>&ldquo;Engineering, to me, is reimagining systems: human, mechanical, and everything in between.&rdquo;</div></div>
-              <div class="af-res"><span class="ad-logo" style="background:#003057;">GT</span><div><b>Georgia Tech &middot; Computer Science</b><br>&ldquo;My debugger has seen my tears more than most of my friends.&rdquo;</div></div>
-              <div class="af-res"><span class="ad-logo" style="background:#33261D;">PUR</span><div><b>Purdue &middot; Computer Engineering</b><br>&ldquo;I used to believe ghosts only lived in stories. But mine wears a cotton sari.&rdquo;</div></div>
+              <div class="af-res"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="YAL school logo" loading="lazy"></span><div><b>Yale &middot; Computer Science</b><br>&ldquo;Engineering, to me, is reimagining systems: human, mechanical, and everything in between.&rdquo;</div></div>
+              <div class="af-res"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="GT school logo" loading="lazy"></span><div><b>Georgia Tech &middot; Computer Science</b><br>&ldquo;My debugger has seen my tears more than most of my friends.&rdquo;</div></div>
+              <div class="af-res"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="PUR school logo" loading="lazy"></span><div><b>Purdue &middot; Computer Engineering</b><br>&ldquo;I used to believe ghosts only lived in stories. But mine wears a cotton sari.&rdquo;</div></div>
               <div class="af-msg af-ai af-note">For inspiration, never to copy. Our team can walk you through any of these live.</div>
             </div>
             <div id="af-results"></div>
@@ -685,7 +797,7 @@
       <div class="admit-grid">
 <details class="admit-card ad-featured">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="Harvard logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="HAR school logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">5 essays</span></div>
     <div class="ad-major">Economics +2</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">This is a courage the earlier versions of me would never have possibly dared to dream of.</p>
@@ -695,7 +807,7 @@
 </details>
 <details class="admit-card ad-featured">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">9 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">9 essays</span></div>
     <div class="ad-major">Symbolic Systems</div>
     
     <p class="ad-preview">I watched people through security cameras, studying their behavior and the small patterns that made each person themselves.</p>
@@ -705,7 +817,7 @@
 </details>
 <details class="admit-card ad-featured">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="Yale logo" loading="lazy"></span><span class="ad-school">Yale</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="YAL school logo" loading="lazy"></span><span class="ad-school">Yale</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Computer Science</div>
     <span class="ad-theme">First gen · Low-income</span>
     <p class="ad-preview">Engineering, to me, is reimagining systems: human, mechanical, and everything in between.</p>
@@ -715,7 +827,7 @@
 </details>
 <details class="admit-card ad-featured">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=uchicago.edu&sz=128" alt="UChicago logo" loading="lazy"></span><span class="ad-school">UChicago</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=uchicago.edu&sz=128" alt="UCH school logo" loading="lazy"></span><span class="ad-school">UChicago</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Political Science</div>
     <span class="ad-theme">Immigrant family · Worked through school</span>
     <p class="ad-preview">The blustery wind of the Chicago winter blows upon my face, and I finally understand what it means to belong here.</p>
@@ -725,7 +837,7 @@
 </details>
 <details class="admit-card ad-featured">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="Harvard logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="HAR school logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">1 essay</span></div>
     <div class="ad-major">Mechanical Engineering</div>
     <span class="ad-theme">First gen · Low-income</span>
     <p class="ad-preview">A midday nap, nonexistent in 105-degree heat. There was no air conditioning, only the hum of a single fan.</p>
@@ -735,7 +847,7 @@
 </details>
 <details class="admit-card ad-featured">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">8 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">8 essays</span></div>
     <div class="ad-major">Biology +2</div>
     
     <p class="ad-preview">And perhaps, while they painstakingly catalog mussels, I&#x27;ll be the one asking why the tide pools matter at all.</p>
@@ -745,7 +857,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">3 prompts</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">3 prompts</span></div>
     <div class="ad-major">CS/Public Health</div>
     <span class="ad-theme">Public Health</span>
     <p class="ad-preview">After my first hackathon, I realized the possibilities of combining computer science with medicine.</p>
@@ -755,7 +867,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Public Policy (Linguistics)</div>
     <span class="ad-theme">Public Policy</span>
     <p class="ad-preview">Since completing two summers of fieldwork in a Yi village and seeing fewer young people speak the indigenous language, I have been drawn to study other marginalized language varieties like Black ASL and AAVE.</p>
@@ -765,7 +877,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">1 prompt</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">1 prompt</span></div>
     <div class="ad-major">Public Policy (Guns)</div>
     <span class="ad-theme">Public Policy (Gun</span>
     <p class="ad-preview">The vigorous vibrations of my phone jolted me from my peaceful sleep.</p>
@@ -775,7 +887,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Public Policy (Indigenous)</div>
     <span class="ad-theme">Public Policy</span>
     <p class="ad-preview">My fascination with parliamentary procedures and debate led me to participate in annual regional and provincial youth parliaments.</p>
@@ -785,7 +897,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">2 prompts</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">2 prompts</span></div>
     <div class="ad-major">Marine Biology</div>
     <span class="ad-theme">Marine Biology</span>
     <p class="ad-preview">“Where has my paradise gone!” With my hands shaking, I knelt in the sand, holding a cold white stick, and shouted at the churning sea.</p>
@@ -795,7 +907,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Environmental Ethics</div>
     
     <p class="ad-preview">As an environmentalist, I am very fond of Ryan Hickman, who organized local beach cleanups at the age of nine, founded a recycling company, and recycled a million bottles.</p>
@@ -805,7 +917,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Asian/Queer Studies</div>
     <span class="ad-theme">Asian/Gender Studies</span>
     <p class="ad-preview">I had my first taste of Duke’s intense communal spirit through Celeste, a Duke undergraduate who was my Residential Counselor at SSHI.</p>
@@ -815,7 +927,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Literary Arts</div>
     <span class="ad-theme">Literary Arts</span>
     <p class="ad-preview">A quick glimpse at my bookshelves: Mapping the Asian Diaspora, Feminism in Coalition, A Black Intellectual’s Odyssey—a vast treasure hunt of knowledge produced by Duke University Press.</p>
@@ -825,7 +937,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="Duke logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">2 prompts</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=duke.edu&sz=128" alt="DUK school logo" loading="lazy"></span><span class="ad-school">Duke</span><span class="ad-count">2 prompts</span></div>
     <div class="ad-major">Asian Diaspora</div>
     <span class="ad-theme">Chemistry +</span>
     <p class="ad-preview">For the third time in one week, I was going through the same motions.</p>
@@ -835,7 +947,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Public Policy (Env.)</div>
     
     <p class="ad-preview">“Aegis is the control, guidance, or direction especially as afforded by a source of protection.”</p>
@@ -845,7 +957,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Communications</div>
     
     <p class="ad-preview">My first attempt at writing lyrics started with my correspondence with a pen pal from primary school.</p>
@@ -855,7 +967,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Drama/Theatre</div>
     <span class="ad-theme">Drama/Theatre</span>
     <p class="ad-preview">I remember these words in many places—in an installation in an arts museum, on a stage, in the margins of a script.</p>
@@ -865,7 +977,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Biomed. Computation</div>
     <span class="ad-theme">Biomedical</span>
     <p class="ad-preview">Dear roommate, hi—I’m Sonya, a die-hard foodie who is convinced that I am the only human who can suck in my nostrils like Voldemort.</p>
@@ -875,7 +987,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Neurosciences</div>
     <span class="ad-theme">Biomedical</span>
     <p class="ad-preview">Growing up in a traditional Chinese family, I never thought I would compose a rap song and perform it on my school stage.</p>
@@ -885,7 +997,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">History/Classics (Pre-Law)</div>
     
     <p class="ad-preview">From Kitty Genovese to George Floyd, the Bystander Effect affects us all.</p>
@@ -895,7 +1007,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Environmental Service</div>
     <span class="ad-theme">Environmental</span>
     <p class="ad-preview">I received my school’s $5,000 grant as one of two annual recipients, restoring the Ballard campsite and La Jolla Spring Trail and re-vegetating the Sunset Valley creek bed.</p>
@@ -905,7 +1017,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Linguistics (Pre-Law)</div>
     <span class="ad-theme">Linguistics (Pre-Law)</span>
     <p class="ad-preview">Eight years ago, in a music store, I knew the gurgling spring for the first time.</p>
@@ -915,7 +1027,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="Princeton logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="PRI school logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Cognitive Science (Music)</div>
     <span class="ad-theme">Cognitive Science + Music</span>
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -925,7 +1037,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="Princeton logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="PRI school logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">History + Music</div>
     <span class="ad-theme">History + Music</span>
     <p class="ad-preview">Co-founder and co-chair of Anthropy, a humanities umbrella platform spanning 18 clubs and four UWC campuses with 20,000+ views.</p>
@@ -935,7 +1047,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="Princeton logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="PRI school logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Classics</div>
     <span class="ad-theme">Classics</span>
     <p class="ad-preview">I see classics as a mirror to modernity—old texts foreshadow enduring human complexity through grand stories and the lives of ordinary figures.</p>
@@ -945,7 +1057,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="Princeton logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">2 prompts</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="PRI school logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">2 prompts</span></div>
     <div class="ad-major">Visual Arts + Art History</div>
     <span class="ad-theme">Visual Arts + Art History</span>
     <p class="ad-preview">I love following the brushstrokes of an artist as I study their painting at a gallery and walk into their inner space.</p>
@@ -955,7 +1067,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="Princeton logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="PRI school logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Intl. Relations</div>
     
     <p class="ad-preview">Committee Chair of the World Health Organization and Head Youth Secretariat—1 of 30 officers elected by 2,000 delegates.</p>
@@ -965,7 +1077,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="Princeton logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=princeton.edu&sz=128" alt="PRI school logo" loading="lazy"></span><span class="ad-school">Princeton</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Philosophy + Lit.</div>
     
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -975,7 +1087,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="UPenn logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Anthropology (Pre-Med)</div>
     <span class="ad-theme">Anthropology (Pre-Med)</span>
     <p class="ad-preview">My curiosity lies at the intersection of two fields: ancient religion and modern medicine.</p>
@@ -985,7 +1097,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="UPenn logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Bioengineering</div>
     <span class="ad-theme">Bioengineering</span>
     <p class="ad-preview">As I carefully crushed the gray pellets into my mortar, I double-checked the measurements one more time.</p>
@@ -995,7 +1107,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="UPenn logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Linguistics</div>
     <span class="ad-theme">Linguistics Research/Quiz Bowl</span>
     <p class="ad-preview">Alone in my house, the sweet sound of our aging, out-of-tune standup piano reverberates around me.</p>
@@ -1005,7 +1117,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="UPenn logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Machine Learning</div>
     <span class="ad-theme">Machine Learning</span>
     <p class="ad-preview">I’ve visited 127 countries since the pandemic began two years ago.</p>
@@ -1015,7 +1127,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="UPenn logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Mechanical Engineering</div>
     <span class="ad-theme">Mechanical Engineering</span>
     <p class="ad-preview">Dear Mr. Long, thank you for caring about teaching.</p>
@@ -1025,7 +1137,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="UPenn logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Neuroscience</div>
     <span class="ad-theme">Neuroscience (Pre-Med)</span>
     <p class="ad-preview">Five-year-old me watched closely as the woman in scrubs slowly sliced through a banana with a scalpel, her movements swift and meticulous.</p>
@@ -1035,7 +1147,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="UPenn logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">1 prompt</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">1 prompt</span></div>
     <div class="ad-major">Nursing (Pre-Med)</div>
     <span class="ad-theme">Nursing (Pre-Med)</span>
     <p class="ad-preview">In the small, dingy apartment, my summer morning routine goes like this: at 8 a.m., I murmur something into my father’s ear to wake him up.</p>
@@ -1045,7 +1157,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=dartmouth.edu&sz=128" alt="Dartmouth logo" loading="lazy"></span><span class="ad-school">Dartmouth</span><span class="ad-count">2 prompts</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=dartmouth.edu&sz=128" alt="DAR school logo" loading="lazy"></span><span class="ad-school">Dartmouth</span><span class="ad-count">2 prompts</span></div>
     <div class="ad-major">Public Policy + Art</div>
     <span class="ad-theme">Public Policy (Debate) + Art</span>
     <p class="ad-preview">Many facets of Dartmouth’s culture and community align with my passions for social justice and public policy.</p>
@@ -1055,7 +1167,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=dartmouth.edu&sz=128" alt="Dartmouth logo" loading="lazy"></span><span class="ad-school">Dartmouth</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=dartmouth.edu&sz=128" alt="DAR school logo" loading="lazy"></span><span class="ad-school">Dartmouth</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Indigenous Studies + Philosophy</div>
     <span class="ad-theme">Indigenous Studies +</span>
     <p class="ad-preview">I hope to develop close working relationships with Dartmouth’s faculty, having encountered their writing in my independent studies.</p>
@@ -1065,7 +1177,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=dartmouth.edu&sz=128" alt="Dartmouth logo" loading="lazy"></span><span class="ad-school">Dartmouth</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=dartmouth.edu&sz=128" alt="DAR school logo" loading="lazy"></span><span class="ad-school">Dartmouth</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Literature + Quiz Bowl</div>
     <span class="ad-theme">Poetry + Quiz Bowl</span>
     <p class="ad-preview">“Do I wake or sleep?” I pondered one autumn night after buying The Complete Poems of John Keats.</p>
@@ -1075,7 +1187,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=dartmouth.edu&sz=128" alt="Dartmouth logo" loading="lazy"></span><span class="ad-school">Dartmouth</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=dartmouth.edu&sz=128" alt="DAR school logo" loading="lazy"></span><span class="ad-school">Dartmouth</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Economics (PPE)</div>
     <span class="ad-theme">Philosophy, Politics, Economics</span>
     <p class="ad-preview">I love to take long walks down the maple grove near my high school in Massachusetts, watching the leaves dance while losing myself to Beethoven.</p>
@@ -1085,7 +1197,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="Yale logo" loading="lazy"></span><span class="ad-school">Yale</span><span class="ad-count">2 prompts</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="YAL school logo" loading="lazy"></span><span class="ad-school">Yale</span><span class="ad-count">2 prompts</span></div>
     <div class="ad-major">ECE (Engineering)</div>
     <span class="ad-theme">Electrical and</span>
     <p class="ad-preview">I drop a neodymium magnet into the 4-foot copper pipe. Thirty seconds later, it still hasn’t emerged from the other end.</p>
@@ -1095,7 +1207,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="Yale logo" loading="lazy"></span><span class="ad-school">Yale</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="YAL school logo" loading="lazy"></span><span class="ad-school">Yale</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Anthropology</div>
     <span class="ad-theme">Anthropology (INTL.</span>
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1105,7 +1217,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="Yale logo" loading="lazy"></span><span class="ad-school">Yale</span><span class="ad-count">1 prompt</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=128" alt="YAL school logo" loading="lazy"></span><span class="ad-school">Yale</span><span class="ad-count">1 prompt</span></div>
     <div class="ad-major">Art History</div>
     <span class="ad-theme">Art History</span>
     <p class="ad-preview">A mocking sunbeam pierced the art studio window and spotlighted my paper, blank as my mind.</p>
@@ -1115,7 +1227,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=emory.edu&sz=128" alt="Full Ride @ Emory logo" loading="lazy"></span><span class="ad-school">Full Ride @ Emory</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=emory.edu&sz=128" alt="EMO school logo" loading="lazy"></span><span class="ad-school">Full Ride @ Emory</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Public Health</div>
     <span class="ad-theme">Public Health</span>
     <p class="ad-preview">I winced in anticipation of the question, “What is wrong with your sister?”</p>
@@ -1125,7 +1237,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="Harvard logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="HAR school logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Journalism</div>
     <span class="ad-theme">Journalism</span>
     <p class="ad-preview">My name cost $625, but to me, it was worthless.</p>
@@ -1135,7 +1247,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="Harvard logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">3 prompts</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="HAR school logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">3 prompts</span></div>
     <div class="ad-major">Immunology (Pre-Med)</div>
     <span class="ad-theme">Immunology</span>
     <p class="ad-preview">I prop my phone against the wall, anxiously waiting.</p>
@@ -1145,7 +1257,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="Harvard logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=128" alt="HAR school logo" loading="lazy"></span><span class="ad-school">Harvard</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Neuroscience (Pre-Med)</div>
     <span class="ad-theme">Neuroscience</span>
     <p class="ad-preview">“The sleepless experiment is over. The science has just begun.”</p>
@@ -1155,7 +1267,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="Columbia logo" loading="lazy"></span><span class="ad-school">Columbia</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="COL school logo" loading="lazy"></span><span class="ad-school">Columbia</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Polisci + Gender Studies</div>
     <span class="ad-theme">Political Science + Gender</span>
     <p class="ad-preview">“If Hillary Clinton can’t satisfy her husband, what makes her think she can satisfy America?”</p>
@@ -1165,7 +1277,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="Columbia logo" loading="lazy"></span><span class="ad-school">Columbia</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="COL school logo" loading="lazy"></span><span class="ad-school">Columbia</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Theater</div>
     <span class="ad-theme">Theater</span>
     <p class="ad-preview">The Backstreets: A Novel from Xinjiang by Perhat Tursun; Borderlands/La Frontera by Gloria Anzaldúa; A Thousand Splendid Suns by Khaled Hosseini…</p>
@@ -1175,7 +1287,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="Columbia logo" loading="lazy"></span><span class="ad-school">Columbia</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="COL school logo" loading="lazy"></span><span class="ad-school">Columbia</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Art History + Art</div>
     <span class="ad-theme">Art History, Visual Arts</span>
     <p class="ad-preview">My Favorite Thing Is Monsters by Emil Ferris; the Odyssey by Homer; “The Uncanny” by Sigmund Freud…</p>
@@ -1185,7 +1297,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="Columbia logo" loading="lazy"></span><span class="ad-school">Columbia</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=columbia.edu&sz=128" alt="COL school logo" loading="lazy"></span><span class="ad-school">Columbia</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Sign Language</div>
     <span class="ad-theme">Linguistics</span>
     <p class="ad-preview">Traversing Chinatown’s border with Little Italy with my Columbia Pre-College sociolinguistics class, I found myself enveloped in Hokchew vendors’ calls.</p>
@@ -1195,7 +1307,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo ad-logo-dual" aria-label="UCLA + Berkeley logos"><img src="https://www.google.com/s2/favicons?domain=ucla.edu&sz=128" alt="" loading="lazy"><img src="https://www.google.com/s2/favicons?domain=berkeley.edu&sz=128" alt="" loading="lazy"></span><span class="ad-school">UCLA + Berkeley</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=berkeley.edu&sz=128" alt="UCB school logo" loading="lazy"></span><span class="ad-school">UCLA + Berkeley</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Public Health/Art</div>
     <span class="ad-theme">Public Health + Art</span>
     <p class="ad-preview">Welcome to Millie’s Diner!</p>
@@ -1205,7 +1317,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo ad-logo-dual" aria-label="UCLA + Berkeley logos"><img src="https://www.google.com/s2/favicons?domain=ucla.edu&sz=128" alt="" loading="lazy"><img src="https://www.google.com/s2/favicons?domain=berkeley.edu&sz=128" alt="" loading="lazy"></span><span class="ad-school">UCLA + Berkeley</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=berkeley.edu&sz=128" alt="UCB school logo" loading="lazy"></span><span class="ad-school">UCLA + Berkeley</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">AI/Financial Tech (Haas)</div>
     <span class="ad-theme">AI / Financial Tech. (Berkeley Haas)</span>
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1215,7 +1327,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northwestern.edu&sz=128" alt="Northwestern logo" loading="lazy"></span><span class="ad-school">Northwestern</span><span class="ad-count">1 prompt</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northwestern.edu&sz=128" alt="NW school logo" loading="lazy"></span><span class="ad-school">Northwestern</span><span class="ad-count">1 prompt</span></div>
     <div class="ad-major">International Relations</div>
     <span class="ad-theme">International Relations</span>
     <p class="ad-preview">Facing the front of the room, I could feel the presence behind me.</p>
@@ -1225,7 +1337,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northwestern.edu&sz=128" alt="Northwestern logo" loading="lazy"></span><span class="ad-school">Northwestern</span><span class="ad-count">1 prompt</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northwestern.edu&sz=128" alt="NW school logo" loading="lazy"></span><span class="ad-school">Northwestern</span><span class="ad-count">1 prompt</span></div>
     <div class="ad-major">Economics</div>
     <span class="ad-theme">Economics</span>
     <p class="ad-preview">Northwestern is the ideal place to pursue my passion in economics: a subject filled with infinite interdisciplinary possibilities and real-world connections.</p>
@@ -1235,7 +1347,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=uchicago.edu&sz=128" alt="UChicago logo" loading="lazy"></span><span class="ad-school">UChicago</span><span class="ad-count">activities & honors</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=uchicago.edu&sz=128" alt="UCH school logo" loading="lazy"></span><span class="ad-school">UChicago</span><span class="ad-count">activities & honors</span></div>
     <div class="ad-major">Politics</div>
     <span class="ad-theme">Politics (ED0, INTL.</span>
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1245,7 +1357,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=mit.edu&sz=128" alt="MIT logo" loading="lazy"></span><span class="ad-school">MIT</span><span class="ad-count">3 prompts</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=mit.edu&sz=128" alt="MIT school logo" loading="lazy"></span><span class="ad-school">MIT</span><span class="ad-count">3 prompts</span></div>
     <div class="ad-major">Math + Dance</div>
     <span class="ad-theme">Number Theory + Dance</span>
     <p class="ad-preview">Shrinking my body through the leotard was like packing sweet sticky rice into tea leaves—it was compact.</p>
@@ -1255,7 +1367,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=virginia.edu&sz=128" alt="Full-Ride @ UVA logo" loading="lazy"></span><span class="ad-school">Full-Ride @ UVA</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=virginia.edu&sz=128" alt="UVA school logo" loading="lazy"></span><span class="ad-school">Full-Ride @ UVA</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Foreign Affairs (Pre-Law)</div>
     <span class="ad-theme">Foreign Affairs (Pre-Law)</span>
     <p class="ad-preview">I turned the corner and saw a freshman standing on a chair, tearing away part of the roof.</p>
@@ -1265,7 +1377,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=cornell.edu&sz=128" alt="Cornell logo" loading="lazy"></span><span class="ad-school">Cornell</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=cornell.edu&sz=128" alt="COR school logo" loading="lazy"></span><span class="ad-school">Cornell</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Girls Who Code</div>
     <span class="ad-theme">Girls Who Code</span>
     <p class="ad-preview">Children’s little voices and the smells of sweat and smoke permeated the room.</p>
@@ -1275,7 +1387,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=cornell.edu&sz=128" alt="Cornell logo" loading="lazy"></span><span class="ad-school">Cornell</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=cornell.edu&sz=128" alt="COR school logo" loading="lazy"></span><span class="ad-school">Cornell</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Project Engineering</div>
     <span class="ad-theme">Project Engineering</span>
     <p class="ad-preview">“Dad, I’m going to school!” I shouted nervously, glancing at the 5 inches of fresh snow outside.</p>
@@ -1285,7 +1397,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ox.ac.uk&sz=128" alt="Oxford logo" loading="lazy"></span><span class="ad-school">Oxford</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ox.ac.uk&sz=128" alt="OXF school logo" loading="lazy"></span><span class="ad-school">Oxford</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">History/Politics</div>
     <span class="ad-theme">Public Policy</span>
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1295,7 +1407,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ox.ac.uk&sz=128" alt="Oxford logo" loading="lazy"></span><span class="ad-school">Oxford</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ox.ac.uk&sz=128" alt="OXF school logo" loading="lazy"></span><span class="ad-school">Oxford</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Chemistry</div>
     <span class="ad-theme">Chemistry</span>
     <p class="ad-preview">“A bad omen!” I exclaimed, dumping a pot of mung bean soup that had turned red down the drain.</p>
@@ -1305,7 +1417,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMich logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMI school logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Ross: FinTech</div>
     <span class="ad-theme">Financial</span>
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1315,7 +1427,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMich logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMI school logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Data Science</div>
     <span class="ad-theme">Data Science</span>
     <p class="ad-preview">It’s the Second World War, and American planes keep returning with bullet holes in the fuselage—which part of the plane do you reinforce?</p>
@@ -1325,7 +1437,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMich logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMI school logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">NYU</div>
     
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1335,7 +1447,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMich logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMI school logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Photography</div>
     <span class="ad-theme">Photography (Tisch)</span>
     <p class="ad-preview">When I first learned to handle a camera, I instantly felt connected to it.</p>
@@ -1345,7 +1457,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMich logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMI school logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">UT Austin</div>
     
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1355,7 +1467,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMich logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMI school logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Finance</div>
     
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1365,7 +1477,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMich logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMI school logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">CMU</div>
     
     <p class="ad-preview">A full admit profile — tap to read the essays, activities &amp; honors inside.</p>
@@ -1375,7 +1487,7 @@
 </details>
 <details class="admit-card">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMich logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=128" alt="UMI school logo" loading="lazy"></span><span class="ad-school">UMich</span><span class="ad-count">full profile</span></div>
     <div class="ad-major">Neuroscience (CMU)</div>
     <span class="ad-theme">Neuroscience</span>
     <p class="ad-preview">“Close your eyes—just listen,” instructed Mr. Inderbitzin.</p>
@@ -1385,7 +1497,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northeastern.edu&sz=128" alt="Northeastern logo" loading="lazy"></span><span class="ad-school">Northeastern</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northeastern.edu&sz=128" alt="NEU school logo" loading="lazy"></span><span class="ad-school">Northeastern</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Business</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">Your wall decor means more than you think.</p>
@@ -1395,7 +1507,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=georgetown.edu&sz=128" alt="Georgetown logo" loading="lazy"></span><span class="ad-school">Georgetown</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=georgetown.edu&sz=128" alt="GTN school logo" loading="lazy"></span><span class="ad-school">Georgetown</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     <span class="ad-theme">Worked through school</span>
     <p class="ad-preview">A personal statement that carried a first-gen applicant across five elite admits.</p>
@@ -1405,7 +1517,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=smcm.edu&sz=128" alt="St Mary's College of Maryland logo" loading="lazy"></span><span class="ad-school">St Mary&#x27;s College of Maryland</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=smcm.edu&sz=128" alt="SMC school logo" loading="lazy"></span><span class="ad-school">St Mary&#x27;s College of Maryland</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Political Science</div>
     <span class="ad-theme">Worked through school</span>
     <p class="ad-preview">A worked-through-school student&#x27;s Common App personal statement.</p>
@@ -1415,7 +1527,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bu.edu&sz=128" alt="Boston University logo" loading="lazy"></span><span class="ad-school">Boston University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bu.edu&sz=128" alt="BU school logo" loading="lazy"></span><span class="ad-school">Boston University</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Biomedical Engineering</div>
     
     <p class="ad-preview">A three-essay package that landed a wide engineering admit list.</p>
@@ -1425,7 +1537,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tulane.edu&sz=128" alt="Tulane logo" loading="lazy"></span><span class="ad-school">Tulane</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tulane.edu&sz=128" alt="TUL school logo" loading="lazy"></span><span class="ad-school">Tulane</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Biochemistry</div>
     
     <p class="ad-preview">A two-essay biochemistry package.</p>
@@ -1435,7 +1547,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=syracuse.edu&sz=128" alt="Syracuse logo" loading="lazy"></span><span class="ad-school">Syracuse</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=syracuse.edu&sz=128" alt="SYR school logo" loading="lazy"></span><span class="ad-school">Syracuse</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Sport Management</div>
     
     <p class="ad-preview">My high school professor inspired me to work harder, which set me up for success.</p>
@@ -1445,7 +1557,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC school logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Undeclared</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">The most powerful communication happens not when you say everything you can, but when you don&#x27;t.</p>
@@ -1455,7 +1567,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=barnard.edu&sz=128" alt="Barnard College logo" loading="lazy"></span><span class="ad-school">Barnard College</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=barnard.edu&sz=128" alt="BAR school logo" loading="lazy"></span><span class="ad-school">Barnard College</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Neuroscience (Pre-Med)</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">I wondered, what was I left with after success?</p>
@@ -1465,7 +1577,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="Georgia Tech logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="GT school logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">1 essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">A single Common App essay that got a direct Georgia Tech admit.</p>
@@ -1475,7 +1587,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">essay set</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU school logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">essay set</span></div>
     <div class="ad-major">Economics</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">An immigrant-family applicant&#x27;s NYU economics essays.</p>
@@ -1485,7 +1597,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU school logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Biomolecular Science</div>
     
     <p class="ad-preview">A three-essay NYU biomolecular science package.</p>
@@ -1495,7 +1607,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umd.edu&sz=128" alt="University of Maryland logo" loading="lazy"></span><span class="ad-school">University of Maryland</span><span class="ad-count">9 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umd.edu&sz=128" alt="UMD school logo" loading="lazy"></span><span class="ad-school">University of Maryland</span><span class="ad-count">9 essays</span></div>
     <div class="ad-major">Biology</div>
     
     <p class="ad-preview">Getting over my fear of judgement.</p>
@@ -1505,7 +1617,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU school logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Economics</div>
     
     <p class="ad-preview">I don&#x27;t have Instagram, but I have a co-founded startup and a friend who flew across the country for me.</p>
@@ -1515,7 +1627,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ucsb.edu&sz=128" alt="UC Santa Barbara logo" loading="lazy"></span><span class="ad-school">UC Santa Barbara</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ucsb.edu&sz=128" alt="UCSB school logo" loading="lazy"></span><span class="ad-school">UC Santa Barbara</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Business-Marketing</div>
     
     <p class="ad-preview">I grew up celebrating Thanksgiving with strangers from all over the world. I resented it.</p>
@@ -1525,7 +1637,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="Georgia Tech logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="GT school logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Aerospace Engineering</div>
     
     <p class="ad-preview">Every kid has obsessions.</p>
@@ -1535,7 +1647,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=brynmawr.edu&sz=128" alt="Bryn Mawr College logo" loading="lazy"></span><span class="ad-school">Bryn Mawr College</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=brynmawr.edu&sz=128" alt="BMC school logo" loading="lazy"></span><span class="ad-school">Bryn Mawr College</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Multiple majors</div>
     <span class="ad-theme">Low-income</span>
     <p class="ad-preview">As I move forward, I remain committed to being the &#x27;thumb&#x27; for marginalized communities.</p>
@@ -1545,7 +1657,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nd.edu&sz=128" alt="Notre Dame logo" loading="lazy"></span><span class="ad-school">Notre Dame</span><span class="ad-count">6 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nd.edu&sz=128" alt="ND school logo" loading="lazy"></span><span class="ad-school">Notre Dame</span><span class="ad-count">6 essays</span></div>
     <div class="ad-major">Psychology; Neuroscience &amp; Behavior</div>
     <span class="ad-theme">Rural hometown</span>
     <p class="ad-preview">Locking myself in a laundry room 101.</p>
@@ -1555,7 +1667,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU school logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Economics</div>
     <span class="ad-theme">International student</span>
     <p class="ad-preview">In Port Stanley, my small town in rural Canada, community takes the shape of faces and names.</p>
@@ -1565,7 +1677,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ufl.edu&sz=128" alt="University of Florida logo" loading="lazy"></span><span class="ad-school">University of Florida</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ufl.edu&sz=128" alt="UF school logo" loading="lazy"></span><span class="ad-school">University of Florida</span><span class="ad-count">4 essays</span></div>
     <div class="ad-major">Biology</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">&#x27;Tiffany,&#x27; a gentle, yet steady voice called out. I raised my head.</p>
@@ -1575,7 +1687,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">11 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC school logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">11 essays</span></div>
     <div class="ad-major">Business</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">The project I&#x27;m most proud of is one my friend and I started from scratch: Gadget Givers.</p>
@@ -1585,7 +1697,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC school logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">4 essays</span></div>
     <div class="ad-major">Business</div>
     
     <p class="ad-preview">&#x27;You girls can sit out; this is a boy&#x27;s activity.&#x27; The lingering words of my PE teacher.</p>
@@ -1595,7 +1707,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northeastern.edu&sz=128" alt="Northeastern logo" loading="lazy"></span><span class="ad-school">Northeastern</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northeastern.edu&sz=128" alt="NEU school logo" loading="lazy"></span><span class="ad-school">Northeastern</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Computer Science</div>
     
     <p class="ad-preview">Dressed in a bright blue tracksuit, I eagerly waited for the camera to flash.</p>
@@ -1605,7 +1717,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="Georgia Tech logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="GT school logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Computer Science</div>
     
     <p class="ad-preview">My debugger has seen my tears more than most of my friends. But each time my code breaks, I start over.</p>
@@ -1615,7 +1727,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=vt.edu&sz=128" alt="Virginia Tech logo" loading="lazy"></span><span class="ad-school">Virginia Tech</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=vt.edu&sz=128" alt="VT school logo" loading="lazy"></span><span class="ad-school">Virginia Tech</span><span class="ad-count">essay</span></div>
     <div class="ad-major">General Engineering</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">I thought it was cool. Even after Tokimune declared a surprise war on me, I still admired one thing about him.</p>
@@ -1625,7 +1737,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tamu.edu&sz=128" alt="Texas A&M logo" loading="lazy"></span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tamu.edu&sz=128" alt="TAM school logo" loading="lazy"></span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Biomedical Engineering</div>
     
     <p class="ad-preview">If it were up to my coaches, I would live my life wrapped in layers on layers of bubble wrap.</p>
@@ -1635,7 +1747,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tamu.edu&sz=128" alt="Texas A&M logo" loading="lazy"></span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tamu.edu&sz=128" alt="TAM school logo" loading="lazy"></span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Biomedical Engineering</div>
     
     <p class="ad-preview">Twenty seconds. A moment so short it is nearly negligible, yet long enough to change everything.</p>
@@ -1645,7 +1757,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="Georgia Tech logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="GT school logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Aerospace Engineering</div>
     
     <p class="ad-preview">Sweltering heat drenched my body as I photographed each cardinal direction and labeled vegetation types, 222 times.</p>
@@ -1655,7 +1767,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ucsd.edu&sz=128" alt="UC San Diego logo" loading="lazy"></span><span class="ad-school">UC San Diego</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ucsd.edu&sz=128" alt="UCSD school logo" loading="lazy"></span><span class="ad-school">UC San Diego</span><span class="ad-count">4 essays</span></div>
     <div class="ad-major">Computer Science</div>
     <span class="ad-theme">Rural hometown</span>
     <p class="ad-preview">Most people are fascinated by what AI can do. I&#x27;m more fascinated by what it shouldn&#x27;t.</p>
@@ -1665,7 +1777,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=iu.edu&sz=128" alt="Indiana University logo" loading="lazy"></span><span class="ad-school">Indiana University</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=iu.edu&sz=128" alt="IU school logo" loading="lazy"></span><span class="ad-school">Indiana University</span><span class="ad-count">5 essays</span></div>
     <div class="ad-major">Business</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">Management gives me the people-centered foundation I need to become a successful corporate lawyer.</p>
@@ -1675,7 +1787,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=illinois.edu&sz=128" alt="UIUC logo" loading="lazy"></span><span class="ad-school">UIUC</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=illinois.edu&sz=128" alt="UIU school logo" loading="lazy"></span><span class="ad-school">UIUC</span><span class="ad-count">4 essays</span></div>
     <div class="ad-major">Business</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">After graduating from UIUC, my goal is to attend law school and become a corporate lawyer.</p>
@@ -1685,7 +1797,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bu.edu&sz=128" alt="Boston University logo" loading="lazy"></span><span class="ad-school">Boston University</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bu.edu&sz=128" alt="BU school logo" loading="lazy"></span><span class="ad-school">Boston University</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Business</div>
     <span class="ad-theme">Student athlete</span>
     <p class="ad-preview">I wish I focused on how to play before focusing on how to win a volleyball game.</p>
@@ -1695,7 +1807,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=osu.edu&sz=128" alt="Ohio State logo" loading="lazy"></span><span class="ad-school">Ohio State</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=osu.edu&sz=128" alt="OSU school logo" loading="lazy"></span><span class="ad-school">Ohio State</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Business</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">I used to think business was just sales pitches, profit margins, and the stock market.</p>
@@ -1705,7 +1817,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umbc.edu&sz=128" alt="UMBC logo" loading="lazy"></span><span class="ad-school">UMBC</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umbc.edu&sz=128" alt="UMBC school logo" loading="lazy"></span><span class="ad-school">UMBC</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Financial Economics</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">When life presents you with a moment too beautiful to last, what would you do?</p>
@@ -1715,7 +1827,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bates.edu&sz=128" alt="Bates College logo" loading="lazy"></span><span class="ad-school">Bates College</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bates.edu&sz=128" alt="BAT school logo" loading="lazy"></span><span class="ad-school">Bates College</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Chemistry and Economics</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">Passing through high-tech hallways and glass doors with yellow Latin letters, I walked into the whitest laboratory I&#x27;d ever seen.</p>
@@ -1725,7 +1837,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=villanova.edu&sz=128" alt="Villanova logo" loading="lazy"></span><span class="ad-school">Villanova</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=villanova.edu&sz=128" alt="NOVA school logo" loading="lazy"></span><span class="ad-school">Villanova</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">My favorite word is &#x27;deb.&#x27; Most people have never used it in a sentence, but I always noticed it.</p>
@@ -1735,7 +1847,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=villanova.edu&sz=128" alt="Villanova logo" loading="lazy"></span><span class="ad-school">Villanova</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=villanova.edu&sz=128" alt="NOVA school logo" loading="lazy"></span><span class="ad-school">Villanova</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">Every day after school, my mom picks me up. However, one day, she wasn&#x27;t answering the phone.</p>
@@ -1745,7 +1857,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umd.edu&sz=128" alt="University of Maryland logo" loading="lazy"></span><span class="ad-school">University of Maryland</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umd.edu&sz=128" alt="UMD school logo" loading="lazy"></span><span class="ad-school">University of Maryland</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Business Marketing</div>
     <span class="ad-theme">International student</span>
     <p class="ad-preview">Rubbing the cracked leather of the backseat, I watched Dulles Airport melt into the sticky horizon.</p>
@@ -1755,7 +1867,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=sacredheart.edu&sz=128" alt="Sacred Heart University logo" loading="lazy"></span><span class="ad-school">Sacred Heart University</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=sacredheart.edu&sz=128" alt="SHU school logo" loading="lazy"></span><span class="ad-school">Sacred Heart University</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">The ring of the bell surrounded me. The music went silent, and the gasps of five judges filled the hall.</p>
@@ -1765,7 +1877,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=washington.edu&sz=128" alt="University of Washington logo" loading="lazy"></span><span class="ad-school">University of Washington</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=washington.edu&sz=128" alt="UW school logo" loading="lazy"></span><span class="ad-school">University of Washington</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Business</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">Standing in front of the back-to-school aisles at Target, a sense of calm washes over me.</p>
@@ -1775,7 +1887,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ncsu.edu&sz=128" alt="NC State logo" loading="lazy"></span><span class="ad-school">NC State</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ncsu.edu&sz=128" alt="NCST school logo" loading="lazy"></span><span class="ad-school">NC State</span><span class="ad-count">5 essays</span></div>
     <div class="ad-major">Biology / Neuroscience</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">Throughout high school I began to develop a passion for serving my church.</p>
@@ -1785,7 +1897,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU school logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Global Public Health</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">I come from a Bengali community that produced revolutionary thinkers like Rabindranath Tagore and Subhas Chandra Bose.</p>
@@ -1795,7 +1907,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=uci.edu&sz=128" alt="UC Irvine logo" loading="lazy"></span><span class="ad-school">UC Irvine</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=uci.edu&sz=128" alt="UCI school logo" loading="lazy"></span><span class="ad-school">UC Irvine</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Mechanical Engineering</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">The day came when I looked into my closet, saw the pile of junk in the corner, and decided it was time to clean it.</p>
@@ -1805,7 +1917,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=unc.edu&sz=128" alt="UNC Chapel Hill logo" loading="lazy"></span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=unc.edu&sz=128" alt="UNC school logo" loading="lazy"></span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Environmental Science</div>
     <span class="ad-theme">Student athlete</span>
     <p class="ad-preview">&#x27;Your brain hears, not your ears.&#x27; I used to hate that poster.</p>
@@ -1815,7 +1927,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=sandiego.edu&sz=128" alt="University of San Diego logo" loading="lazy"></span><span class="ad-school">University of San Diego</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=sandiego.edu&sz=128" alt="USD school logo" loading="lazy"></span><span class="ad-school">University of San Diego</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Biology</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">&#x27;Smile!&#x27; click. As a kid, I remember always seeing my dad with a camera at any event.</p>
@@ -1825,7 +1937,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ucsd.edu&sz=128" alt="UC San Diego logo" loading="lazy"></span><span class="ad-school">UC San Diego</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ucsd.edu&sz=128" alt="UCSD school logo" loading="lazy"></span><span class="ad-school">UC San Diego</span><span class="ad-count">5 essays</span></div>
     <div class="ad-major">Molecular and Cell Biology</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">I was terrified on my first day.</p>
@@ -1835,7 +1947,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=iastate.edu&sz=128" alt="Iowa State logo" loading="lazy"></span><span class="ad-school">Iowa State</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=iastate.edu&sz=128" alt="ISU school logo" loading="lazy"></span><span class="ad-school">Iowa State</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Entrepreneurship</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">My father had just passed away, my mother&#x27;s mental illness worsened, and there was no food at home.</p>
@@ -1845,7 +1957,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC school logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">My grandmother and I experienced a different kind of period poverty.</p>
@@ -1855,7 +1967,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="Georgia Tech logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="GT school logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">Red berries terrify me. While a coyote&#x27;s howl spooks me, a bush of berries and broken tree stumps unnerves me more.</p>
@@ -1865,7 +1977,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="Georgia Tech logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=gatech.edu&sz=128" alt="GT school logo" loading="lazy"></span><span class="ad-school">Georgia Tech</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">My aspiration to study biology at Georgia Tech is a pivotal step toward a career in medicine.</p>
@@ -1875,7 +1987,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ufl.edu&sz=128" alt="University of Florida logo" loading="lazy"></span><span class="ad-school">University of Florida</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=ufl.edu&sz=128" alt="UF school logo" loading="lazy"></span><span class="ad-school">University of Florida</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">Our car rolled to a stop.</p>
@@ -1885,7 +1997,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bc.edu&sz=128" alt="Boston College logo" loading="lazy"></span><span class="ad-school">Boston College</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bc.edu&sz=128" alt="BC school logo" loading="lazy"></span><span class="ad-school">Boston College</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Biochemistry</div>
     
     <p class="ad-preview">I once turned into a &#x27;red zombie&#x27; when I was young.</p>
@@ -1895,7 +2007,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=unc.edu&sz=128" alt="UNC Chapel Hill logo" loading="lazy"></span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=unc.edu&sz=128" alt="UNC school logo" loading="lazy"></span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">My aunt pointed toward the thin mattress in her guest room. Cramps gripped my stomach; my mind was jumbled.</p>
@@ -1905,7 +2017,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="Purdue University logo" loading="lazy"></span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="PUR school logo" loading="lazy"></span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Computer Science</div>
     
     <p class="ad-preview">I&#x27;ve learned that innovation means little if it never reaches the people who need it most.</p>
@@ -1915,7 +2027,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=illinois.edu&sz=128" alt="UIUC logo" loading="lazy"></span><span class="ad-school">UIUC</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=illinois.edu&sz=128" alt="UIU school logo" loading="lazy"></span><span class="ad-school">UIUC</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Computer Science + Bioengineering</div>
     
     <p class="ad-preview">My grandma&#x27;s gum disease went completely unnoticed until she lost every tooth, later causing heart complications.</p>
@@ -1925,7 +2037,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC school logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">4 essays</span></div>
     <div class="ad-major">Artificial Intelligence</div>
     
     <p class="ad-preview">The first time I ran my Oralytics oral-health model on shaky, hand-captured images, everything broke.</p>
@@ -1935,7 +2047,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=nyu.edu&sz=128" alt="NYU school logo" loading="lazy"></span><span class="ad-school">NYU</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Business</div>
     
     <p class="ad-preview">The first version of my travel companion app, PathPal, failed for a reason I didn&#x27;t see coming.</p>
@@ -1945,7 +2057,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=washington.edu&sz=128" alt="University of Washington logo" loading="lazy"></span><span class="ad-school">University of Washington</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=washington.edu&sz=128" alt="UW school logo" loading="lazy"></span><span class="ad-school">University of Washington</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Computer Science</div>
     
     <p class="ad-preview">My mom&#x27;s voice slapped me as she stared at the pan of sizzling cumin seeds.</p>
@@ -1955,7 +2067,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umn.edu&sz=128" alt="University of Minnesota logo" loading="lazy"></span><span class="ad-school">University of Minnesota</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umn.edu&sz=128" alt="UMN school logo" loading="lazy"></span><span class="ad-school">University of Minnesota</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Aerospace Engineering</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">An aerospace-focused package built around persistence and hands-on building.</p>
@@ -1965,7 +2077,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=colorado.edu&sz=128" alt="CU Boulder logo" loading="lazy"></span><span class="ad-school">CU Boulder</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=colorado.edu&sz=128" alt="CU school logo" loading="lazy"></span><span class="ad-school">CU Boulder</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Aerospace Engineering</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">An aerospace-focused package built around persistence and hands-on building.</p>
@@ -1975,7 +2087,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="Purdue University logo" loading="lazy"></span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="PUR school logo" loading="lazy"></span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Aerospace Engineering</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">An aerospace-focused package built around persistence and hands-on building.</p>
@@ -1985,7 +2097,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=illinois.edu&sz=128" alt="UIUC logo" loading="lazy"></span><span class="ad-school">UIUC</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=illinois.edu&sz=128" alt="UIU school logo" loading="lazy"></span><span class="ad-school">UIUC</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Aerospace Engineering</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">Not all puzzles come in boxes. Some are spoken, lived, and quietly built from the ground up.</p>
@@ -1995,7 +2107,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=utexas.edu&sz=128" alt="UT Austin logo" loading="lazy"></span><span class="ad-school">UT Austin</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=utexas.edu&sz=128" alt="UTA school logo" loading="lazy"></span><span class="ad-school">UT Austin</span><span class="ad-count">4 essays</span></div>
     <div class="ad-major">Computer Science</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">Suddenly, the string snaps. I&#x27;d been practicing guitar for hours when the high E broke mid-solo.</p>
@@ -2005,7 +2117,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=binghamton.edu&sz=128" alt="Binghamton University logo" loading="lazy"></span><span class="ad-school">Binghamton University</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=binghamton.edu&sz=128" alt="BING school logo" loading="lazy"></span><span class="ad-school">Binghamton University</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Psychology</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">Before eighth grade, I was a typical talkative pre-teen; I talked so much I would get in trouble.</p>
@@ -2015,7 +2127,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=auburn.edu&sz=128" alt="Auburn University logo" loading="lazy"></span><span class="ad-school">Auburn University</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=auburn.edu&sz=128" alt="AUB school logo" loading="lazy"></span><span class="ad-school">Auburn University</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">&#x27;Om asya sriman-mahApunyakarmnaH prarmbhe,&#x27; the pandit chanted.</p>
@@ -2025,7 +2137,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tamu.edu&sz=128" alt="Texas A&M logo" loading="lazy"></span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tamu.edu&sz=128" alt="TAM school logo" loading="lazy"></span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Mechanical Engineering</div>
     
     <p class="ad-preview">Terrified by what I&#x27;d heard, I entered my physics class on the first day of junior year expecting the worst.</p>
@@ -2035,7 +2147,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=hmc.edu&sz=128" alt="Harvey Mudd logo" loading="lazy"></span><span class="ad-school">Harvey Mudd</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=hmc.edu&sz=128" alt="HMC school logo" loading="lazy"></span><span class="ad-school">Harvey Mudd</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Chemistry</div>
     <span class="ad-theme">Student athlete</span>
     <p class="ad-preview">Recently, I&#x27;ve realized that perfection is nothing more than an illusion.</p>
@@ -2045,7 +2157,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="Purdue University logo" loading="lazy"></span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="PUR school logo" loading="lazy"></span><span class="ad-school">Purdue University</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Engineering (First-Year)</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">Purdue is renowned for its resources, especially research programs, which I believe would let me thrive.</p>
@@ -2055,7 +2167,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bu.edu&sz=128" alt="Boston University logo" loading="lazy"></span><span class="ad-school">Boston University</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=bu.edu&sz=128" alt="BU school logo" loading="lazy"></span><span class="ad-school">Boston University</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Biomedical Engineering</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">&#x27;¿Qué significan estos números?&#x27; asked a Hispanic woman who seemed about my mom&#x27;s age.</p>
@@ -2065,7 +2177,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=cmu.edu&sz=128" alt="Carnegie Mellon logo" loading="lazy"></span><span class="ad-school">Carnegie Mellon</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=cmu.edu&sz=128" alt="CMU school logo" loading="lazy"></span><span class="ad-school">Carnegie Mellon</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Chemical Engineering</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">The cards we are dealt are final, but their use is endless. Believing in my cards is what helped me win.</p>
@@ -2075,7 +2187,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=cmu.edu&sz=128" alt="Carnegie Mellon logo" loading="lazy"></span><span class="ad-school">Carnegie Mellon</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=cmu.edu&sz=128" alt="CMU school logo" loading="lazy"></span><span class="ad-school">Carnegie Mellon</span><span class="ad-count">4 essays</span></div>
     <div class="ad-major">Chemical Engineering</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">A successful college experience, to me, is one where learning is constantly collaborative.</p>
@@ -2085,7 +2197,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC school logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Industrial &amp; Systems Engineering</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">&#x27;Fue tu decisión, no la mía&#x27; — it was your decision, not mine.</p>
@@ -2095,7 +2207,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=washington.edu&sz=128" alt="University of Washington logo" loading="lazy"></span><span class="ad-school">University of Washington</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=washington.edu&sz=128" alt="UW school logo" loading="lazy"></span><span class="ad-school">University of Washington</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Multiple fields</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">With a pink sweater, blue jeans, black Converse, and sweaty hands, I arrived at the Van Nuys Med Sci Building.</p>
@@ -2105,7 +2217,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC school logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">5 essays</span></div>
     <div class="ad-major">Film</div>
     
     <p class="ad-preview">I have lived my whole life in the intersection between my race and gender.</p>
@@ -2115,7 +2227,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="Purdue University logo" loading="lazy"></span><span class="ad-school">Purdue University</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=purdue.edu&sz=128" alt="PUR school logo" loading="lazy"></span><span class="ad-school">Purdue University</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Computer Engineering</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">I used to believe ghosts only lived in stories. But mine wears a cotton sari and whispers my name.</p>
@@ -2125,7 +2237,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=fsu.edu&sz=128" alt="Florida State University logo" loading="lazy"></span><span class="ad-school">Florida State University</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=fsu.edu&sz=128" alt="FSU school logo" loading="lazy"></span><span class="ad-school">Florida State University</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Business</div>
     
     <p class="ad-preview">In eighth grade, I found myself in the unlikeliest of places, trapped in the whirlwind of a pandemic.</p>
@@ -2135,7 +2247,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=vt.edu&sz=128" alt="Virginia Tech logo" loading="lazy"></span><span class="ad-school">Virginia Tech</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=vt.edu&sz=128" alt="VT school logo" loading="lazy"></span><span class="ad-school">Virginia Tech</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Mechanical Engineering</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">Flowers can symbolize any part of life: celebration, decoration, love, grief, or a first impression.</p>
@@ -2145,7 +2257,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=unc.edu&sz=128" alt="UNC Chapel Hill logo" loading="lazy"></span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">10 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=unc.edu&sz=128" alt="UNC school logo" loading="lazy"></span><span class="ad-school">UNC Chapel Hill</span><span class="ad-count">10 essays</span></div>
     <div class="ad-major">Multiple fields</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">&#x27;And they can just steal her cells?&#x27; my younger brother asked, horrified.</p>
@@ -2155,7 +2267,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umb.edu&sz=128" alt="UMass Boston logo" loading="lazy"></span><span class="ad-school">UMass Boston</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=umb.edu&sz=128" alt="UMB school logo" loading="lazy"></span><span class="ad-school">UMass Boston</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Psychology</div>
     <span class="ad-theme">Low-income</span>
     <p class="ad-preview">Balancing open-mindedness with knowing who I am was a revelation that changed my perspective on life.</p>
@@ -2165,7 +2277,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tamu.edu&sz=128" alt="Texas A&M logo" loading="lazy"></span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=tamu.edu&sz=128" alt="TAM school logo" loading="lazy"></span><span class="ad-school">Texas A&amp;M</span><span class="ad-count">essay</span></div>
     <div class="ad-major">General Engineering</div>
     
     <p class="ad-preview">The lights dimmed. Excitedly, Senora Herrera urged us, &#x27;Stand up, everyone!&#x27;</p>
@@ -2175,7 +2287,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">5 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=usc.edu&sz=128" alt="USC school logo" loading="lazy"></span><span class="ad-school">USC</span><span class="ad-count">5 essays</span></div>
     <div class="ad-major">Undeclared Engineering</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">As someone with a passion for math and tech but a deep love for the arts, each side is essential to me.</p>
@@ -2185,7 +2297,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=vanderbilt.edu&sz=128" alt="Vanderbilt University logo" loading="lazy"></span><span class="ad-school">Vanderbilt University</span><span class="ad-count">2 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=vanderbilt.edu&sz=128" alt="VAN school logo" loading="lazy"></span><span class="ad-school">Vanderbilt University</span><span class="ad-count">2 essays</span></div>
     <div class="ad-major">Multiple fields</div>
     
     <p class="ad-preview">At my first high school orchestra rehearsal, I was the only female trumpet player.</p>
@@ -2195,7 +2307,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=psu.edu&sz=128" alt="Penn State logo" loading="lazy"></span><span class="ad-school">Penn State</span><span class="ad-count">essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=psu.edu&sz=128" alt="PSU school logo" loading="lazy"></span><span class="ad-school">Penn State</span><span class="ad-count">essay</span></div>
     <div class="ad-major">Computer Science</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">It was 6:27 P.M. on a sunny June evening in 2019 — three more minutes.</p>
@@ -2205,7 +2317,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=rice.edu&sz=128" alt="Rice logo" loading="lazy"></span><span class="ad-school">Rice</span><span class="ad-count">7 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=rice.edu&sz=128" alt="RICE school logo" loading="lazy"></span><span class="ad-school">Rice</span><span class="ad-count">7 essays</span></div>
     <div class="ad-major">Computer Science</div>
     <span class="ad-theme">QuestBridge Scholar</span>
     <p class="ad-preview">A single drop hits the lake at the same instant a YouTube workout video begins to play.</p>
@@ -2215,7 +2327,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=jhu.edu&sz=128" alt="Johns Hopkins logo" loading="lazy"></span><span class="ad-school">Johns Hopkins</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=jhu.edu&sz=128" alt="JHU school logo" loading="lazy"></span><span class="ad-school">Johns Hopkins</span><span class="ad-count">1 essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">My phone screen lights up. “Wind ensemble results are out” pops up on the screen.</p>
@@ -2225,7 +2337,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northwestern.edu&sz=128" alt="Northwestern logo" loading="lazy"></span><span class="ad-school">Northwestern</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northwestern.edu&sz=128" alt="NW school logo" loading="lazy"></span><span class="ad-school">Northwestern</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Business Marketing</div>
     <span class="ad-theme">International student</span>
     <p class="ad-preview">I didn’t expect clicking “Upload” on a video to reveal a new kind of audience.</p>
@@ -2235,7 +2347,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="UPenn logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">4 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=128" alt="PEN school logo" loading="lazy"></span><span class="ad-school">UPenn</span><span class="ad-count">4 essays</span></div>
     <div class="ad-major">Chemical and Biomolecular Engineering +2</div>
     <span class="ad-theme">Immigrant family</span>
     <p class="ad-preview">In detailing my passions for science and good food.</p>
@@ -2245,7 +2357,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">6 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">6 essays</span></div>
     <div class="ad-major">Engineering &amp; Science</div>
     
     <p class="ad-preview">Cedranone: an exquisite molecule of 15 Carbon and 24 Hydrogen atoms.</p>
@@ -2255,7 +2367,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=jhu.edu&sz=128" alt="Johns Hopkins logo" loading="lazy"></span><span class="ad-school">Johns Hopkins</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=jhu.edu&sz=128" alt="JHU school logo" loading="lazy"></span><span class="ad-school">Johns Hopkins</span><span class="ad-count">1 essay</span></div>
     <div class="ad-major">Economics</div>
     
     <p class="ad-preview">The “first” that has shaped me most is the Afghan women I teach.</p>
@@ -2265,7 +2377,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northwestern.edu&sz=128" alt="Northwestern logo" loading="lazy"></span><span class="ad-school">Northwestern</span><span class="ad-count">3 essays</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=northwestern.edu&sz=128" alt="NW school logo" loading="lazy"></span><span class="ad-school">Northwestern</span><span class="ad-count">3 essays</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     
     <p class="ad-preview">“Because I said so” — the soundtrack of my childhood.</p>
@@ -2275,7 +2387,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="Stanford logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=stanford.edu&sz=128" alt="STA school logo" loading="lazy"></span><span class="ad-school">Stanford</span><span class="ad-count">1 essay</span></div>
     <div class="ad-major">Common App Personal Statement</div>
     <span class="ad-theme">First gen</span>
     <p class="ad-preview">Fixing radios with my grandfather taught me how things really work.</p>
@@ -2285,7 +2397,7 @@
 </details>
 <details class="admit-card ad-import">
   <summary>
-    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=berkeley.edu&sz=128" alt="UC Berkeley logo" loading="lazy"></span><span class="ad-school">UC Berkeley</span><span class="ad-count">1 essay</span></div>
+    <div class="ad-top"><span class="ad-logo"><img src="https://www.google.com/s2/favicons?domain=berkeley.edu&sz=128" alt="UCB school logo" loading="lazy"></span><span class="ad-school">UC Berkeley</span><span class="ad-count">1 essay</span></div>
     <div class="ad-major">Public Policy +1</div>
     
     <p class="ad-preview">“I think so,” I reply, gripping the stick tightly. Then it happens.</p>
@@ -3056,7 +3168,7 @@
       var s=document.querySelector('#view-admitfolio .af-stage');
       if(!s||!s.parentNode) return;
       s.parentNode.replaceChild(s.cloneNode(true), s);
-    },30000);
+    },78000);
   });
 })();
 </script>
